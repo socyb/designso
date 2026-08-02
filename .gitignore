@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Presenter-only material — never synced to GitHub
+LOCAL/
+
+# Copyrighted source books — must not be published in a public repo
+PDF/
