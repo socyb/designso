@@ -266,7 +266,44 @@ body.day .ic-moon{display:block}
 .gb-off{font-family:var(--px);font-size:8px;color:var(--coral);letter-spacing:1px;line-height:2}
 .gb-invite{cursor:pointer}
 .gb-invite:hover{border-color:var(--cream);color:var(--cream)}
+.gb-foot{border-top:3px solid var(--cream);background:var(--bg2);padding:8px 14px;text-align:center}
+#gb-wall-link{
+  background:none;border:none;cursor:pointer;color:var(--amber);
+  font-family:var(--px);font-size:8px;letter-spacing:1px;line-height:1.9;padding:4px;
+}
+#gb-wall-link:hover{color:var(--cream)}
 @media print{#guestbook,#gb-backdrop{display:none!important}}
+
+/* ---------- hall of perturbations (slide 16) ---------- */
+#s16{
+  background-image:repeating-linear-gradient(to bottom,
+    rgba(242,234,216,.028) 0 1px, transparent 1px 4px);
+}
+body.day #s16{
+  background-image:repeating-linear-gradient(to bottom,
+    rgba(42,35,23,.04) 0 1px, transparent 1px 4px);
+}
+.gb-status{font-family:var(--px);font-size:10px;color:var(--amber);letter-spacing:1px;line-height:2;margin:16px 0}
+.gb-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px;margin:14px 0}
+.gb-card{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--bg2);border:2px solid var(--faint);border-left:6px solid currentColor;
+  padding:12px 14px;
+}
+.acc-t{color:var(--teal)} .acc-o{color:var(--coral)} .acc-a{color:var(--amber)}
+.acc-m{color:var(--magenta)} .acc-l{color:var(--lime)}
+.gb-av{flex:0 0 auto;margin-top:2px}
+.gb-av svg{width:38px;height:38px;image-rendering:pixelated}
+.gb-main{min-width:0;flex:1}
+.gb-head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gb-name{font-family:var(--px);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.gb-date{font-family:var(--px);font-size:7px;color:var(--dim);letter-spacing:1px}
+.gb-new{font-family:var(--px);font-size:7px;color:var(--lime);border:1px solid var(--lime);padding:1px 5px;letter-spacing:1px}
+.gb-txt{color:var(--cream);font-size:clamp(13px,1.6vw,16px);line-height:1.5;margin-top:6px;white-space:pre-wrap;overflow-wrap:break-word}
+.gb-reply{color:var(--dim);font-size:clamp(12px,1.4vw,14px);line-height:1.45;margin-top:8px;padding-left:12px;border-left:2px solid var(--faint);white-space:pre-wrap;overflow-wrap:break-word}
+.gb-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.gb-actions .chip{cursor:pointer}
+.gb-actions .chip:hover{border-color:var(--cream);color:var(--cream)}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -337,6 +374,9 @@ body.day .ic-moon{display:block}
         data-page-title="The Ontology of Design in a Sociocybernetic Key"></div>
       <p class="gb-off" hidden>The guestbook needs an internet connection — try again online.</p>
     </div>
+    <footer class="gb-foot">
+      <button id="gb-wall-link" type="button">&#9733; see them big &mdash; hall of perturbations &#8594;</button>
+    </footer>
   </div>
 </aside>
 
@@ -766,6 +806,23 @@ body.day .ic-moon{display:block}
   <div class="frieze" aria-hidden="true"></div>
 </section>
 
+<!-- ============ 16 · HALL OF PERTURBATIONS ============ -->
+<section class="slide" id="s16" aria-label="Guestbook — hall of perturbations">
+  <div class="wrap">
+    <div class="kicker">Guestbook <span class="no">· player comments</span></div>
+    <h2>&#9733; Hall of Perturbations &#9733;</h2>
+    <p class="small">Every comment is a perturbation entering the system &mdash; each visitor becomes a unique observer sprite. The system, of course, decides how to translate them.</p>
+    <p class="gb-status" id="gb-status">LOADING PERTURBATIONS <span class="blink">&#9646;</span></p>
+    <div class="gb-wall" id="gb-wall"></div>
+    <div class="gb-actions">
+      <button class="chip t gb-invite" type="button">&#9658; add your perturbation</button>
+      <button class="chip a" id="gb-refresh" type="button">&#8635; refresh</button>
+    </div>
+    <div class="footline">scan the QR on slide 01 to join &middot; socyb.github.io/designso</div>
+  </div>
+  <div class="frieze" aria-hidden="true"></div>
+</section>
+
 <script>
 (function(){
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
@@ -800,6 +857,7 @@ body.day .ic-moon{display:block}
       cells[i].className = i<cur?'on':(i===cur?'cur':'');
     }
     if(history.replaceState) history.replaceState(null,'','#'+(cur+1));
+    if(s.id==='s16') loadWall();
   }
 
   function next(){ go(cur+1); }
@@ -868,6 +926,89 @@ body.day .ic-moon{display:block}
   Array.prototype.forEach.call(document.querySelectorAll('.gb-invite'), function(el){
     el.addEventListener('click', openGB);
   });
+  document.getElementById('gb-wall-link').addEventListener('click', function(){
+    closeGB(); go(slides.length-1);
+  });
+  document.getElementById('gb-refresh').addEventListener('click', function(){ loadWall(); });
+
+  // --- hall of perturbations: custom comment wall ---
+  var ACCENTS=['t','o','a','m','l'];
+  function hashStr(s){
+    var h=2166136261;
+    for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h*16777619)>>>0; }
+    return h;
+  }
+  function avatarSVG(name){
+    var h=hashStr(name||'player');
+    var cells='';
+    for(var y=0;y<8;y++){
+      for(var x=0;x<4;x++){
+        if((h>>>(y*4+x))&1){
+          cells+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'
+                +'<rect x="'+(7-x)+'" y="'+y+'" width="1" height="1"/>';
+        }
+      }
+    }
+    return '<svg viewBox="0 0 8 8" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true">'+cells+'</svg>';
+  }
+  function fmtDate(iso){
+    try{
+      return new Date(iso).toLocaleString('en-GB',
+        {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+  function buildCard(c,i){
+    var name=c.by_nickname||'anonymous observer';
+    var art=document.createElement('article');
+    art.className='gb-card reveal acc-'+ACCENTS[hashStr(name)%ACCENTS.length];
+    art.style.setProperty('--i', Math.min(i,8));
+    var av=document.createElement('span');
+    av.className='gb-av'; av.innerHTML=avatarSVG(name);
+    var main=document.createElement('div'); main.className='gb-main';
+    var head=document.createElement('div'); head.className='gb-head';
+    var nm=document.createElement('span'); nm.className='gb-name'; nm.textContent=name;
+    var dt=document.createElement('span'); dt.className='gb-date'; dt.textContent=fmtDate(c.createdAt);
+    head.appendChild(nm); head.appendChild(dt);
+    if(i===0){
+      var nw=document.createElement('span');
+      nw.className='gb-new blink'; nw.textContent='★ new';
+      head.appendChild(nw);
+    }
+    var txt=document.createElement('p'); txt.className='gb-txt'; txt.textContent=c.content||'';
+    main.appendChild(head); main.appendChild(txt);
+    var reps=(c.replies&&c.replies.data)||[];
+    reps.forEach(function(r){
+      var rp=document.createElement('p'); rp.className='gb-reply';
+      var who=r.by_nickname||(r.moderator&&r.moderator.displayName)||'moderators';
+      rp.textContent='↳ '+who+': '+(r.content||'');
+      main.appendChild(rp);
+    });
+    art.appendChild(av); art.appendChild(main);
+    return art;
+  }
+  function loadWall(){
+    var wall=document.getElementById('gb-wall');
+    var status=document.getElementById('gb-status');
+    if(!window.fetch){ status.textContent='THIS BROWSER CANNOT LOAD THE WALL — PRESS C INSTEAD'; return; }
+    status.hidden=false;
+    status.innerHTML='LOADING PERTURBATIONS <span class="blink">▎</span>';
+    fetch('https://cusdis.com/api/open/comments?appId=960b7bef-d731-4569-8792-b6540f00a28b&pageId=designso-oaxaca-2026')
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        var arr=(j.data&&j.data.data)||[];
+        arr.sort(function(a,b){ return new Date(b.createdAt)-new Date(a.createdAt); });
+        wall.innerHTML='';
+        if(!arr.length){
+          status.textContent='NO PERTURBATIONS YET — BE THE FIRST PLAYER';
+          return;
+        }
+        status.hidden=true;
+        arr.forEach(function(c,i){ wall.appendChild(buildCard(c,i)); });
+      })
+      .catch(function(){
+        status.textContent='NO SIGNAL — THE WALL NEEDS AN INTERNET CONNECTION';
+      });
+  }
 
   document.addEventListener('keydown', function(e){
     if(e.metaKey||e.ctrlKey||e.altKey) return;
