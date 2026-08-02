@@ -238,6 +238,36 @@ body.day .ic-sun{display:none}
 body.day .ic-moon{display:block}
 @media print{#tools{display:none}}
 
+/* ---------- guestbook (Cusdis comments) ---------- */
+#gb-backdrop{position:fixed;inset:0;background:rgba(6,5,4,.62);z-index:49}
+#gb-backdrop[hidden]{display:none}
+#guestbook{
+  position:fixed;z-index:50;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:min(540px,94vw);max-height:min(78vh,720px);display:flex;
+}
+#guestbook[hidden]{display:none}
+.gb-frame{
+  display:flex;flex-direction:column;width:100%;
+  background:var(--bg);border:3px solid var(--cream);
+  box-shadow:0 0 0 5px var(--bg),0 0 0 7px var(--faint);
+}
+.gb-frame header{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:12px 14px;border-bottom:3px solid var(--cream);background:var(--bg2);
+}
+.gb-title{font-family:var(--px);font-size:11px;color:var(--amber);letter-spacing:1px}
+.gb-sub{font-family:var(--px);font-size:7px;color:var(--dim);letter-spacing:1px;line-height:1.8}
+#gb-close{
+  margin-left:auto;background:none;border:2px solid var(--faint);color:var(--cream);
+  font-family:var(--px);font-size:10px;width:26px;height:24px;cursor:pointer;line-height:1;
+}
+#gb-close:hover{border-color:var(--coral);color:var(--coral)}
+.gb-body{overflow-y:auto;padding:12px 14px;min-height:180px}
+.gb-off{font-family:var(--px);font-size:8px;color:var(--coral);letter-spacing:1px;line-height:2}
+.gb-invite{cursor:pointer}
+.gb-invite:hover{border-color:var(--cream);color:var(--cream)}
+@media print{#guestbook,#gb-backdrop{display:none!important}}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -287,7 +317,28 @@ body.day .ic-moon{display:block}
   </button>
   <button id="zoomIn" aria-label="Zoom in" title="Zoom in (+)">+</button>
   <button id="zoomOut" aria-label="Zoom out" title="Zoom out (-)">-</button>
+  <button id="gbBtn" aria-label="Open the guestbook comments" title="Guestbook (C)"><svg class="sp" viewBox="0 0 16 10" style="width:16px;height:10px"><use href="#sp-bubbles"/></svg></button>
 </div>
+
+<div id="gb-backdrop" hidden></div>
+<aside id="guestbook" hidden role="dialog" aria-label="Guestbook — leave a comment">
+  <div class="gb-frame">
+    <header>
+      <span class="gb-title">★ GUESTBOOK ★</span>
+      <span class="gb-sub">leave a perturbation — the system will translate it</span>
+      <button id="gb-close" aria-label="Close guestbook">×</button>
+    </header>
+    <div class="gb-body">
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="960b7bef-d731-4569-8792-b6540f00a28b"
+        data-page-id="designso-oaxaca-2026"
+        data-page-url="https://socyb.github.io/designso/"
+        data-page-title="The Ontology of Design in a Sociocybernetic Key"></div>
+      <p class="gb-off" hidden>The guestbook needs an internet connection — try again online.</p>
+    </div>
+  </div>
+</aside>
 
 <!-- ============ 1 · INTRODUCTION ============ -->
 <section class="slide" id="s1" aria-label="Title">
@@ -706,6 +757,9 @@ body.day .ic-moon{display:block}
         <b>Anaís Ortega</b>
         <a href="mailto:anais.ortega@politicas.unam.mx">anais.ortega@politicas.unam.mx</a>
       </div>
+      <div class="row reveal" style="--i:5">
+        <button class="chip t gb-invite" type="button">&#9658; sign the guestbook — leave us a perturbation</button>
+      </div>
     </div>
     <div class="footline">RC51 · 19th International Conference of Sociocybernetics · Glocal Intersections · Oaxaca 2026 · socyb.github.io/designso</div>
   </div>
@@ -760,6 +814,11 @@ body.day .ic-moon{display:block}
     var m=document.querySelector('meta[name="theme-color"]');
     if(m) m.setAttribute('content', day?'#f4edda':'#0e0d0b');
     try{ sessionStorage.setItem('dso-theme', day?'day':'night'); }catch(e){}
+    var ct=document.getElementById('cusdis_thread');
+    if(ct) ct.setAttribute('data-theme', day?'light':'dark');
+    if(window.CUSDIS && window.CUSDIS.setTheme){
+      try{ window.CUSDIS.setTheme(day?'light':'dark'); }catch(e){}
+    }
   }
   function toggleTheme(){ setTheme(!document.body.classList.contains('day')); }
   document.getElementById('themeBtn').addEventListener('click', toggleTheme);
@@ -782,8 +841,40 @@ body.day .ic-moon{display:block}
     if(!isNaN(zs) && zs!==1) setZoom(zs);
   }catch(e){}
 
+  // --- guestbook (Cusdis) ---
+  var gb=document.getElementById('guestbook');
+  var gbBack=document.getElementById('gb-backdrop');
+  var cusdisLoaded=false;
+  function loadCusdis(){
+    var day=document.body.classList.contains('day');
+    document.getElementById('cusdis_thread').setAttribute('data-theme', day?'light':'dark');
+    if(cusdisLoaded) return;
+    cusdisLoaded=true;
+    var s=document.createElement('script');
+    s.src='https://cusdis.com/js/cusdis.es.js';
+    s.async=true; s.defer=true;
+    s.onerror=function(){
+      cusdisLoaded=false;
+      document.querySelector('.gb-off').hidden=false;
+    };
+    document.body.appendChild(s);
+  }
+  function openGB(){ gb.hidden=false; gbBack.hidden=false; loadCusdis(); }
+  function closeGB(){ gb.hidden=true; gbBack.hidden=true; }
+  function toggleGB(){ gb.hidden ? openGB() : closeGB(); }
+  document.getElementById('gbBtn').addEventListener('click', toggleGB);
+  document.getElementById('gb-close').addEventListener('click', closeGB);
+  gbBack.addEventListener('click', closeGB);
+  Array.prototype.forEach.call(document.querySelectorAll('.gb-invite'), function(el){
+    el.addEventListener('click', openGB);
+  });
+
   document.addEventListener('keydown', function(e){
     if(e.metaKey||e.ctrlKey||e.altKey) return;
+    if(!gb.hidden){
+      if(e.key==='Escape'||e.key==='c'||e.key==='C') closeGB();
+      return;
+    }
     switch(e.key){
       case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
       case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
@@ -794,6 +885,7 @@ body.day .ic-moon{display:block}
         else if(document.documentElement.requestFullscreen){ document.documentElement.requestFullscreen(); }
         break;
       case 'd': case 'D': toggleTheme(); break;
+      case 'c': case 'C': openGB(); break;
       case '+': case '=': setZoom(zoom+.1); break;
       case '-': case '_': setZoom(zoom-.1); break;
       case '0': setZoom(1); break;
