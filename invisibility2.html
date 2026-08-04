@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The (In)Visibility of the Technical: Uncanny Valley, Explainability, and AI Alignment — Jorge Cardiel Herrera. RC51 · 19th International Conference of Sociocybernetics, Oaxaca 2026. GP edition.">
+<meta name="theme-color" content="#0c120a">
+<title>The (In)Visibility of the Technical · RC51 Oaxaca 2026 · GP edition</title>
+<style>
+@font-face{
+  font-family:'Press Start 2P';
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url(data:font/woff2;base64,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) format('woff2');
+}
+:root{
+  --bg:#0c120a; --bg2:#151d10; --panel:#1b2513;
+  --cream:#f0ecd9; --dim:#a3ab8f; --faint:#5f6a4f;
+  --blu:#4a72d8; --red:#e8452a; --yel:#f2c53d; --wht:#c9cdbb; --grn:#7fae43;
+  --px:'Press Start 2P','Courier New',monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{height:100%}
+body{
+  background:var(--bg);color:var(--cream);font-family:var(--sans);
+  height:100%;overflow:hidden;-webkit-font-smoothing:antialiased;
+}
+svg{display:block}
+a{color:var(--blu);text-decoration:none;border-bottom:1px dotted var(--blu)}
+a:hover{color:var(--cream);border-bottom-color:var(--cream)}
+em{font-style:italic}
+
+#hud{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;pointer-events:none;
+  font-family:var(--px);font-size:8px;letter-spacing:1px;color:var(--faint);
+  text-transform:uppercase;
+}
+#hud .lap{color:var(--yel)}
+#progress{position:fixed;bottom:12px;left:14px;z-index:40;display:flex;gap:5px}
+#progress i{width:12px;height:9px;background:var(--bg2);border:1px solid var(--faint);cursor:pointer;pointer-events:auto;transform:skewX(-18deg)}
+#progress i.on{background:var(--yel);border-color:var(--yel)}
+#progress i.cur{background:var(--red);border-color:var(--red)}
+#navbtns{position:fixed;bottom:8px;right:12px;z-index:40;display:flex;gap:8px}
+#navbtns button{
+  background:var(--bg2);color:var(--cream);border:2px solid var(--faint);
+  width:44px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+#navbtns button:hover{border-color:var(--red);color:var(--red)}
+#navbtns button svg{width:18px;height:16px}
+#navbtns .prev svg{transform:scaleX(-1)}
+
+.slide{
+  display:none;flex-direction:column;position:relative;
+  width:100%;height:var(--slideH,100dvh);overflow-y:auto;overflow-x:hidden;
+  padding:52px clamp(16px,5vw,72px) 64px;
+}
+.slide.active{display:flex}
+.wrap{max-width:1080px;width:100%;margin:auto}
+.kicker{
+  font-family:var(--px);font-size:clamp(7px,1.2vw,10px);letter-spacing:1px;
+  color:var(--yel);text-transform:uppercase;line-height:1.9;margin-bottom:14px;
+}
+.kicker .no{color:var(--faint)}
+h1{font-size:clamp(30px,6vw,64px);line-height:1.08;font-weight:800;letter-spacing:-.5px;font-style:italic}
+h2{font-size:clamp(22px,3.6vw,40px);line-height:1.15;font-weight:800;margin-bottom:18px;font-style:italic}
+.sub{color:var(--blu);font-weight:700;font-size:clamp(16px,2.2vw,24px);margin-top:14px}
+p,li{font-size:clamp(14px,1.7vw,19px);line-height:1.5}
+ul.pts{list-style:none;display:flex;flex-direction:column;gap:12px;margin:8px 0}
+ul.pts li{padding-left:26px;position:relative}
+ul.pts li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:11px;background:var(--blu);transform:skewX(-18deg)}
+ul.pts li.co::before{background:var(--red)}
+ul.pts li.am::before{background:var(--yel)}
+ul.pts li.ma::before{background:var(--wht)}
+ul.pts li.li::before{background:var(--grn)}
+.hl-t{color:var(--blu)} .hl-o{color:var(--red)} .hl-a{color:var(--yel)}
+.hl-m{color:var(--wht)} .hl-l{color:var(--grn)}
+.cite{color:var(--dim);font-size:.82em;white-space:nowrap}
+@media(max-width:480px){.cite{white-space:normal}}
+.quote{
+  border-left:6px solid var(--blu);background:var(--bg2);
+  padding:14px 18px;margin:16px 0;font-size:clamp(15px,2vw,21px);line-height:1.45;font-style:italic;
+}
+.quote .who{display:block;font-style:normal;font-family:var(--px);font-size:8px;color:var(--dim);margin-top:10px;letter-spacing:1px}
+.quote.co{border-color:var(--red)} .quote.am{border-color:var(--yel)} .quote.ma{border-color:var(--wht)}
+.big{font-size:clamp(19px,2.8vw,30px);font-weight:800;line-height:1.3;margin:18px 0}
+.small{font-size:clamp(12px,1.4vw,15px);color:var(--dim)}
+.note{color:var(--dim);font-size:clamp(12px,1.5vw,16px);margin-top:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,40px)}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.chip{
+  border:2px solid var(--faint);background:var(--bg2);padding:8px 12px;
+  font-family:var(--px);font-size:clamp(7px,1.1vw,10px);letter-spacing:1px;text-transform:uppercase;line-height:1.7;
+  transform:skewX(-8deg);
+}
+.chip.t{border-color:var(--blu);color:var(--blu)}
+.chip.o{border-color:var(--red);color:var(--red)}
+.chip.a{border-color:var(--yel);color:var(--yel)}
+.chip.m{border-color:var(--wht);color:var(--wht)}
+.chip.l{border-color:var(--grn);color:var(--grn)}
+
+.sp{image-rendering:pixelated;shape-rendering:crispEdges}
+.float{animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.blink{animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* two-frame sprite flip (wheels + exhaust flame, waving flags) */
+.frames use.f2{opacity:0}
+.frames.fast use.f1{animation:frA .44s steps(1) infinite}
+.frames.fast use.f2{animation:frB .44s steps(1) infinite}
+.frames.slow use.f1{animation:frA .82s steps(1) infinite}
+.frames.slow use.f2{animation:frB .82s steps(1) infinite}
+@keyframes frA{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes frB{0%,100%{opacity:0}50%{opacity:1}}
+
+/* start-light tree: red, yellow, green — then loop */
+.lights use.lampR{opacity:0;animation:lampR 2.7s steps(1) infinite}
+.lights use.lampY{opacity:0;animation:lampY 2.7s steps(1) infinite}
+.lights use.lampG{opacity:0;animation:lampG 2.7s steps(1) infinite}
+@keyframes lampR{0%{opacity:1}38%{opacity:0}100%{opacity:0}}
+@keyframes lampY{0%{opacity:0}38%{opacity:1}66%{opacity:0}100%{opacity:0}}
+@keyframes lampG{0%{opacity:0}66%{opacity:1}100%{opacity:1}}
+
+/* title racing scene: green blur streaks + the two cars of the cover */
+.race-scene{position:relative;width:min(100%,360px);aspect-ratio:16/10;min-height:170px}
+.race-scene::before{
+  content:"";position:absolute;inset:4% 0;
+  background-image:
+    linear-gradient(90deg,rgba(127,174,67,.42) 0 55%,transparent 55%),
+    linear-gradient(90deg,rgba(201,205,187,.26) 0 42%,transparent 42%),
+    linear-gradient(90deg,rgba(127,174,67,.3) 0 62%,transparent 62%),
+    linear-gradient(90deg,rgba(201,205,187,.18) 0 50%,transparent 50%);
+  background-size:52px 2px,74px 2px,40px 2px,64px 2px;
+  background-position:0 14%,0 40%,0 66%,0 92%;
+  background-repeat:repeat-x;
+  animation:streaks .8s linear infinite;
+}
+@keyframes streaks{to{background-position:-52px 14%,-74px 40%,-40px 66%,-64px 92%}}
+.race-scene .car{position:absolute}
+.race-scene .car.c-blue{width:60%;right:0;top:2%;animation:idle .58s steps(2) infinite}
+.race-scene .car.c-red{width:84%;left:0;bottom:2%;animation:idle .46s steps(2) infinite}
+@keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.race-scene .lights-tree{position:absolute;left:2%;top:0;width:11%}
+
+/* steering wheel: piloting drift, not stopping the ship */
+.steer{animation:steer 3.8s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes steer{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+
+/* guard rail + asphalt + centre dashes, scrolling at speed */
+.frieze{
+  height:24px;background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 13%22 shape-rendering=%22crispEdges%22%3E%3Crect width=%2216%22 height=%222%22 fill=%22%23e2e3d5%22/%3E%3Crect x=%221%22 y=%222%22 width=%222%22 height=%222%22 fill=%22%238f9782%22/%3E%3Crect x=%229%22 y=%222%22 width=%222%22 height=%222%22 fill=%22%238f9782%22/%3E%3Crect y=%224%22 width=%2216%22 height=%227%22 fill=%22%231c2314%22/%3E%3Crect y=%227%22 width=%229%22 height=%222%22 fill=%22%23f2c53d%22/%3E%3Crect y=%2211%22 width=%2216%22 height=%222%22 fill=%22%232c4416%22/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-size:30px 100%;
+  opacity:.9;margin:22px 0 0;
+  animation:road 8s linear infinite;
+}
+@keyframes road{to{background-position-x:-600px}}
+
+.reveal{opacity:0;transform:translateY(14px)}
+.active .reveal{animation:rise .55s ease forwards;animation-delay:calc(var(--i,0)*.13s + .05s)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+.qr-tile{background:#f0ecd9;padding:12px;display:inline-block;color:#101208}
+.qr-tile svg{width:clamp(96px,14vw,150px);height:auto}
+.qr-card{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.qr-url{font-family:var(--px);font-size:clamp(7px,1.1vw,10px);color:var(--dim);letter-spacing:1px;line-height:2}
+
+#s1 .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(18px,4vw,56px);align-items:center;position:relative;z-index:1}
+@media(max-width:820px){#s1 .wrap{grid-template-columns:1fr}}
+.title-side{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.authors{margin-top:22px;font-size:clamp(15px,2vw,21px);font-weight:700}
+.session{
+  margin-top:10px;font-family:var(--px);font-size:clamp(7px,1.2vw,10px);
+  color:var(--grn);letter-spacing:1px;line-height:2;text-transform:uppercase;
+}
+.pressstart{margin-top:26px;font-family:var(--px);font-size:clamp(8px,1.3vw,11px);color:var(--yel);letter-spacing:1px}
+.bg-road{
+  position:absolute;right:-2vw;bottom:4vh;width:56vw;max-width:720px;opacity:.13;
+  pointer-events:none;z-index:0;
+}
+
+.levels{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px}
+.lv{display:flex;gap:12px;align-items:baseline;padding:9px 12px;background:var(--bg2)}
+.lv .n{font-family:var(--px);font-size:9px;color:var(--yel);flex:0 0 auto}
+.lv .t{font-size:clamp(13px,1.7vw,18px);line-height:1.4}
+
+/* valley diagram */
+.valley-fig{width:100%;max-width:720px;margin:6px auto}
+.valley-fig svg{width:100%;height:auto;overflow:visible}
+.vlabel{font-family:var(--px);font-size:3.1px;fill:var(--dim);letter-spacing:.2px}
+.vlabel.hi{fill:var(--cream)}
+.vlabel.co{fill:var(--red)}
+.vmark{fill:var(--red)}
+.vmark.t{fill:var(--blu)}
+.vcap{font-family:var(--px);font-size:clamp(7px,1.1vw,10px);color:var(--dim);letter-spacing:1px;text-align:center;line-height:1.9;margin-top:8px;text-transform:uppercase}
+
+/* disappearing devices timeline */
+.timeline{display:flex;align-items:flex-end;gap:clamp(10px,2.5vw,26px);justify-content:center;margin:14px 0;flex-wrap:wrap}
+.timeline figure{display:flex;flex-direction:column;align-items:center;gap:8px}
+.timeline figcaption{font-family:var(--px);font-size:7px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+.timeline .ar{color:var(--yel);font-weight:800;font-size:20px;align-self:center}
+
+/* glitch bubble */
+.glitch-bubble{
+  background:var(--bg2);border:2px solid var(--blu);padding:14px 16px;max-width:460px;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(12px,1.5vw,15px);line-height:1.6;
+}
+.glitch-bubble .mrk{color:var(--red);background:rgba(232,69,42,.12);animation:flick 3.5s steps(1) infinite}
+@keyframes flick{0%,100%{opacity:1}47%{opacity:1}50%{opacity:.25}53%{opacity:1}}
+
+/* regulation loop + corridor */
+.loop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.loop .st{background:var(--bg2);border:2px solid var(--blu);color:var(--cream);padding:7px 10px;font-family:var(--px);font-size:clamp(6px,1vw,9px);letter-spacing:.5px;line-height:1.6;transform:skewX(-8deg)}
+.loop .ar{color:var(--yel);font-weight:800}
+.loop .back{border-color:var(--yel);color:var(--yel)}
+.corridor{width:100%;max-width:640px;margin:8px auto}
+.corridor svg{width:100%;height:auto}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:12px 0}
+.pgrid .p{background:var(--bg2);border-left:4px solid var(--blu);padding:8px 10px;font-size:clamp(11px,1.4vw,14px);line-height:1.35}
+.pgrid .p b{display:block;font-family:var(--px);font-size:7px;color:var(--yel);margin-bottom:4px;letter-spacing:1px}
+
+.duo{display:flex;gap:clamp(18px,5vw,64px);justify-content:center;margin:8px 0}
+.duo figure{display:flex;flex-direction:column;align-items:center;gap:10px}
+.duo figcaption{font-family:var(--px);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+
+.refs{font-size:clamp(11px,1.35vw,14.5px);line-height:1.45;column-count:2;column-gap:34px}
+@media(max-width:820px){.refs{column-count:1}}
+.refs p{margin:0 0 9px;padding-left:1.4em;text-indent:-1.4em;font-size:inherit;break-inside:avoid;overflow-wrap:break-word}
+.refs i{font-style:italic}
+
+.contact{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.contact .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.contact svg{width:26px;height:auto;flex:0 0 auto}
+.contact b{font-size:clamp(15px,1.9vw,20px)}
+.contact a{font-family:var(--px);font-size:clamp(7px,1.2vw,10px);letter-spacing:1px}
+.footline{margin-top:auto;padding-top:18px;color:var(--faint);font-family:var(--px);font-size:7px;letter-spacing:1px;text-transform:uppercase;line-height:1.9}
+
+/* day theme — the album cover in full daylight */
+body{transition:background-color .35s ease,color .35s ease}
+body.day{
+  --bg:#efe8d2; --bg2:#e3d9bb; --panel:#d8cca6;
+  --cream:#232b16; --dim:#687056; --faint:#a29b7e;
+  --blu:#24479f; --red:#b92d12; --yel:#8d6a06; --wht:#6d7360; --grn:#4c6b1c;
+}
+body.day .frieze{opacity:.6}
+body.day .bg-road{opacity:.2}
+
+/* tools */
+#tools{position:fixed;top:34px;right:10px;z-index:41;display:flex;flex-direction:column;gap:6px}
+#tools button{
+  width:30px;height:28px;display:flex;align-items:center;justify-content:center;
+  background:var(--bg2);color:var(--cream);border:2px solid var(--faint);cursor:pointer;
+  opacity:.55;font-family:var(--px);font-size:10px;padding:0;line-height:1;
+}
+#tools button:hover,#tools button:focus-visible{opacity:1;border-color:var(--yel);color:var(--yel)}
+#tools svg{width:14px;height:14px}
+.ic-moon{display:none}
+body.day .ic-sun{display:none}
+body.day .ic-moon{display:block}
+@media print{#tools{display:none}}
+
+/* guestbook */
+#gb-backdrop{position:fixed;inset:0;background:rgba(4,7,3,.62);z-index:49}
+#gb-backdrop[hidden]{display:none}
+#guestbook{
+  position:fixed;z-index:50;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:min(540px,94vw);max-height:min(78vh,720px);display:flex;
+}
+#guestbook[hidden]{display:none}
+.gb-frame{
+  display:flex;flex-direction:column;width:100%;
+  background:var(--bg);border:3px solid var(--cream);
+  box-shadow:0 0 0 5px var(--bg),0 0 0 7px var(--faint);
+}
+.gb-frame header{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:12px 14px;border-bottom:3px solid var(--cream);background:var(--bg2);
+}
+.gb-title{font-family:var(--px);font-size:11px;color:var(--yel);letter-spacing:1px}
+.gb-sub{font-family:var(--px);font-size:7px;color:var(--dim);letter-spacing:1px;line-height:1.8}
+#gb-close{
+  margin-left:auto;background:none;border:2px solid var(--faint);color:var(--cream);
+  font-family:var(--px);font-size:10px;width:26px;height:24px;cursor:pointer;line-height:1;
+}
+#gb-close:hover{border-color:var(--red);color:var(--red)}
+.gb-body{overflow-y:auto;padding:12px 14px;min-height:180px}
+.gb-off{font-family:var(--px);font-size:8px;color:var(--red);letter-spacing:1px;line-height:2}
+.gb-invite{cursor:pointer}
+.gb-invite:hover{border-color:var(--cream);color:var(--cream)}
+.gb-foot{border-top:3px solid var(--cream);background:var(--bg2);padding:8px 14px;text-align:center}
+#gb-wall-link{
+  background:none;border:none;cursor:pointer;color:var(--yel);
+  font-family:var(--px);font-size:8px;letter-spacing:1px;line-height:1.9;padding:4px;
+}
+#gb-wall-link:hover{color:var(--cream)}
+@media print{#guestbook,#gb-backdrop{display:none!important}}
+
+/* hall of observations */
+#s16{background-image:repeating-linear-gradient(to bottom,rgba(240,236,217,.028) 0 1px,transparent 1px 4px)}
+body.day #s16{background-image:repeating-linear-gradient(to bottom,rgba(35,43,22,.04) 0 1px,transparent 1px 4px)}
+.gb-status{font-family:var(--px);font-size:10px;color:var(--yel);letter-spacing:1px;line-height:2;margin:16px 0}
+.gb-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px;margin:14px 0}
+.gb-card{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--bg2);border:2px solid var(--faint);border-left:6px solid currentColor;
+  padding:12px 14px;
+}
+.acc-t{color:var(--blu)} .acc-o{color:var(--red)} .acc-a{color:var(--yel)}
+.acc-m{color:var(--wht)} .acc-l{color:var(--grn)}
+.gb-av{flex:0 0 auto;margin-top:2px}
+.gb-av svg{width:38px;height:38px;image-rendering:pixelated}
+.gb-main{min-width:0;flex:1}
+.gb-head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.gb-name{font-family:var(--px);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.gb-date{font-family:var(--px);font-size:7px;color:var(--dim);letter-spacing:1px}
+.gb-new{font-family:var(--px);font-size:7px;color:var(--grn);border:1px solid var(--grn);padding:1px 5px;letter-spacing:1px}
+.gb-txt{color:var(--cream);font-size:clamp(13px,1.6vw,16px);line-height:1.5;margin-top:6px;white-space:pre-wrap;overflow-wrap:break-word}
+.gb-reply{color:var(--dim);font-size:clamp(12px,1.4vw,14px);line-height:1.45;margin-top:8px;padding-left:12px;border-left:2px solid var(--faint);white-space:pre-wrap;overflow-wrap:break-word}
+.gb-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.gb-actions .chip{cursor:pointer}
+.gb-actions .chip:hover{border-color:var(--cream);color:var(--cream)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+@media print{
+  body{overflow:visible;height:auto}
+  .slide{display:flex!important;height:auto;min-height:96vh;page-break-after:always;overflow:visible}
+  #hud,#progress,#navbtns{display:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<noscript><style>
+  body{overflow:auto}
+  .slide{display:flex}
+  #navbtns,#progress{display:none}
+</style></noscript>
+</head>
+<body>
+<script>
+/* auto theme: day mode 07:00-18:59 local time, night otherwise; a manual
+   toggle (stored per browser session) overrides the clock */
+(function(){try{
+  var st=sessionStorage.getItem('dso2-theme');
+  var h=new Date().getHours();
+  var day = st ? st==='day' : (h>=7 && h<19);
+  if(day) document.body.className='day';
+  var m=document.querySelector('meta[name="theme-color"]');
+  if(m) m.setAttribute('content', day?'#efe8d2':'#0c120a');
+}catch(e){}})();
+</script>
+
+<div id="defs"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sp-watch" viewBox="0 0 8 9"><path fill="var(--cream,#f0ecd9)" d="M2 0h4v1h-4zM1 1h6v1h-6zM0 2h1v1h-1zM7 2h1v1h-1zM0 3h1v1h-1zM7 3h1v1h-1zM0 4h1v1h-1zM7 4h1v1h-1zM0 5h1v1h-1zM7 5h1v1h-1zM0 6h1v1h-1zM7 6h1v1h-1zM1 7h6v1h-6zM2 8h4v1h-4z"/><path fill="#0d1208" d="M2 3h1v1h-1zM6 3h1v1h-1zM3 4h1v1h-1zM4 5h1v1h-1z"/><path fill="var(--blu,#4a72d8)" d="M1 2h6v1h-6zM1 3h1v1h-1zM3 3h3v1h-3zM1 4h2v1h-2zM4 4h3v1h-3zM1 5h3v1h-3zM5 5h2v1h-2zM1 6h6v1h-6z"/></symbol><symbol id="sp-phone" viewBox="0 0 8 10"><path fill="var(--cream,#f0ecd9)" d="M1 0h6v1h-6zM0 1h1v1h-1zM7 1h1v1h-1zM0 2h1v1h-1zM7 2h1v1h-1zM0 3h1v1h-1zM7 3h1v1h-1zM0 4h1v1h-1zM7 4h1v1h-1zM0 5h1v1h-1zM7 5h1v1h-1zM0 6h1v1h-1zM7 6h1v1h-1zM0 7h1v1h-1zM7 7h1v1h-1zM0 8h1v1h-1zM7 8h1v1h-1zM1 9h6v1h-6z"/><path fill="#0d1208" d="M1 1h6v1h-6zM1 2h1v1h-1zM6 2h1v1h-1zM1 3h6v1h-6zM1 4h6v1h-6zM1 5h3v1h-3zM5 5h2v1h-2zM1 6h6v1h-6zM1 7h6v1h-6zM1 8h6v1h-6z"/><path fill="var(--blu,#4a72d8)" d="M2 2h4v1h-4zM4 5h1v1h-1z"/></symbol><symbol id="sp-speaker" viewBox="0 0 10 10"><path fill="var(--cream,#f0ecd9)" d="M2 0h6v1h-6zM1 1h8v1h-8zM0 2h2v1h-2zM8 2h2v1h-2zM0 3h2v1h-2zM8 3h2v1h-2zM0 4h2v1h-2zM8 4h2v1h-2zM0 5h10v1h-10zM0 6h2v1h-2zM3 6h1v1h-1zM5 6h1v1h-1zM7 6h3v1h-3zM0 7h2v1h-2zM3 7h1v1h-1zM5 7h1v1h-1zM7 7h3v1h-3zM1 8h8v1h-8zM2 9h6v1h-6z"/><path fill="#0d1208" d="M3 3h4v1h-4zM2 6h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM2 7h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1z"/><path fill="var(--blu,#4a72d8)" d="M2 2h6v1h-6zM2 3h1v1h-1zM7 3h1v1h-1zM2 4h6v1h-6z"/></symbol><symbol id="sp-chat" viewBox="0 0 12 9"><path fill="var(--cream,#f0ecd9)" d="M2 2h1v1h-1zM5 2h1v1h-1zM8 2h1v1h-1zM2 4h7v1h-7z"/><path fill="var(--blu,#4a72d8)" d="M1 0h10v1h-10zM0 1h12v1h-12zM0 2h2v1h-2zM3 2h2v1h-2zM6 2h2v1h-2zM9 2h3v1h-3zM0 3h12v1h-12zM0 4h2v1h-2zM9 4h3v1h-3zM0 5h12v1h-12zM1 6h10v1h-10zM3 7h2v1h-2zM2 8h2v1h-2z"/></symbol><symbol id="sp-bbox" viewBox="0 0 14 9"><path fill="var(--cream,#f0ecd9)" d="M0 0h14v1h-14zM0 1h1v1h-1zM13 1h1v1h-1zM0 2h1v1h-1zM13 2h1v1h-1zM0 3h1v1h-1zM13 3h1v1h-1zM0 4h1v1h-1zM13 4h1v1h-1zM0 5h1v1h-1zM13 5h1v1h-1zM0 6h1v1h-1zM13 6h1v1h-1zM0 7h1v1h-1zM13 7h1v1h-1zM0 8h14v1h-14z"/><path fill="#0d1208" d="M1 1h5v1h-5zM7 1h6v1h-6zM1 2h4v1h-4zM6 2h6v1h-6zM1 3h5v1h-5zM7 3h6v1h-6zM1 4h6v1h-6zM8 4h4v1h-4zM1 5h5v1h-5zM7 5h5v1h-5zM1 6h4v1h-4zM6 6h6v1h-6zM1 7h5v1h-5zM7 7h6v1h-6z"/><path fill="#5d6b3a" d="M12 2h1v1h-1zM12 4h1v1h-1zM12 5h1v1h-1zM12 6h1v1h-1z"/><path fill="var(--red,#e8452a)" d="M6 1h1v1h-1zM5 2h1v1h-1zM6 3h1v1h-1zM7 4h1v1h-1zM6 5h1v1h-1zM5 6h1v1h-1zM6 7h1v1h-1z"/></symbol><symbol id="sp-wave" viewBox="0 0 24 8"><path fill="var(--red,#e8452a)" d="M3 4h2v1h-2zM10 4h2v1h-2zM17 4h2v1h-2zM2 5h1v1h-1zM5 5h1v1h-1zM9 5h1v1h-1zM12 5h1v1h-1zM16 5h1v1h-1zM19 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM20 6h1v1h-1zM23 6h1v1h-1zM0 7h1v1h-1zM7 7h1v1h-1zM14 7h1v1h-1zM21 7h2v1h-2z"/><path fill="var(--blu,#4a72d8)" d="M2 0h2v1h-2zM9 0h2v1h-2zM16 0h2v1h-2zM1 1h1v1h-1zM4 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM15 1h1v1h-1zM18 1h1v1h-1zM0 2h1v1h-1zM5 2h1v1h-1zM7 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM19 2h1v1h-1zM23 2h1v1h-1zM6 3h1v1h-1zM13 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1z"/></symbol><symbol id="sp-ecc" viewBox="0 0 24 9"><path fill="var(--cream,#f0ecd9)" d="M3 0h4v1h-4zM15 0h4v1h-4zM1 1h2v1h-2zM7 1h2v1h-2zM13 1h2v1h-2zM19 1h2v1h-2zM1 2h1v1h-1zM8 2h1v1h-1zM13 2h1v1h-1zM20 2h1v1h-1zM0 3h1v1h-1zM9 3h1v1h-1zM12 3h1v1h-1zM21 3h1v1h-1zM0 4h1v1h-1zM9 4h1v1h-1zM12 4h1v1h-1zM21 4h1v1h-1zM1 5h1v1h-1zM8 5h1v1h-1zM13 5h1v1h-1zM20 5h1v1h-1zM1 6h2v1h-2zM7 6h2v1h-2zM13 6h2v1h-2zM19 6h2v1h-2zM3 7h4v1h-4zM15 7h4v1h-4z"/><path fill="#0d1208" d="M4 3h2v1h-2zM4 4h2v1h-2z"/><path fill="var(--red,#e8452a)" d="M23 3h1v1h-1zM21 7h2v1h-2zM21 8h1v1h-1z"/></symbol><symbol id="sp-mask" viewBox="0 0 10 10"><path fill="var(--cream,#f0ecd9)" d="M1 0h8v1h-8zM0 1h10v1h-10zM0 2h1v1h-1zM3 2h4v1h-4zM9 2h1v1h-1zM0 3h10v1h-10zM0 4h10v1h-10zM0 5h1v1h-1zM2 5h6v1h-6zM9 5h1v1h-1zM0 6h2v1h-2zM8 6h2v1h-2zM1 7h8v1h-8zM2 8h6v1h-6zM4 9h2v1h-2z"/><path fill="#0d1208" d="M1 2h2v1h-2zM7 2h2v1h-2zM1 5h1v1h-1zM8 5h1v1h-1zM2 6h6v1h-6z"/></symbol><symbol id="sp-bubbles" viewBox="0 0 16 10"><path fill="var(--cream,#f0ecd9)" d="M2 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1z"/><path fill="var(--red,#e8452a)" d="M1 0h8v1h-8zM0 1h1v1h-1zM9 1h1v1h-1zM0 2h1v1h-1zM9 2h1v1h-1zM0 3h1v1h-1zM1 4h7v1h-7zM2 5h2v1h-2zM2 6h1v1h-1z"/><path fill="var(--blu,#4a72d8)" d="M7 3h9v1h-9zM8 4h1v1h-1zM15 4h1v1h-1zM8 5h1v1h-1zM15 5h1v1h-1zM8 6h1v1h-1zM15 6h1v1h-1zM8 7h7v1h-7zM12 8h2v1h-2zM13 9h1v1h-1z"/></symbol><symbol id="sp-mail" viewBox="0 0 14 9"><path fill="var(--cream,#f0ecd9)" d="M0 0h14v1h-14zM0 1h1v1h-1zM13 1h1v1h-1zM0 2h1v1h-1zM13 2h1v1h-1zM0 3h1v1h-1zM13 3h1v1h-1zM0 4h1v1h-1zM13 4h1v1h-1zM0 5h1v1h-1zM13 5h1v1h-1zM0 6h1v1h-1zM13 6h1v1h-1zM0 7h1v1h-1zM13 7h1v1h-1zM0 8h14v1h-14z"/><path fill="var(--blu,#4a72d8)" d="M1 1h1v1h-1zM12 1h1v1h-1zM2 2h1v1h-1zM11 2h1v1h-1zM3 3h1v1h-1zM10 3h1v1h-1zM4 4h2v1h-2zM8 4h2v1h-2zM6 5h2v1h-2z"/></symbol><symbol id="sp-arrow" viewBox="0 0 8 7"><path fill="currentColor" d="M4 0h1v1h-1zM4 1h2v1h-2zM0 2h7v1h-7zM0 3h8v1h-8zM0 4h7v1h-7zM4 5h2v1h-2zM4 6h1v1h-1z"/></symbol><symbol id="sp-glitch" viewBox="0 0 16 11"><path fill="var(--yel,#f2c53d)" d="M1 1h14v1h-14z"/><path fill="var(--cream,#f0ecd9)" d="M0 0h16v1h-16zM0 1h1v1h-1zM15 1h1v1h-1zM0 2h1v1h-1zM15 2h1v1h-1zM0 3h1v1h-1zM2 3h4v1h-4zM7 3h3v1h-3zM15 3h1v1h-1zM0 4h1v1h-1zM15 4h1v1h-1zM0 5h1v1h-1zM15 5h1v1h-1zM0 6h1v1h-1zM15 6h1v1h-1zM0 7h1v1h-1zM15 7h1v1h-1zM0 8h1v1h-1zM2 8h6v1h-6zM9 8h3v1h-3zM15 8h1v1h-1zM0 9h1v1h-1zM15 9h1v1h-1zM0 10h16v1h-16z"/><path fill="#0d1208" d="M1 2h14v1h-14zM1 3h1v1h-1zM6 3h1v1h-1zM10 3h5v1h-5zM1 4h14v1h-14zM1 5h1v1h-1zM4 5h1v1h-1zM8 5h2v1h-2zM12 5h3v1h-3zM1 6h1v1h-1zM4 6h2v1h-2zM10 6h2v1h-2zM13 6h2v1h-2zM1 7h14v1h-14zM1 8h1v1h-1zM8 8h1v1h-1zM12 8h3v1h-3zM1 9h14v1h-14z"/><path fill="var(--red,#e8452a)" d="M2 5h2v1h-2zM5 5h3v1h-3zM10 5h2v1h-2zM2 6h2v1h-2zM6 6h4v1h-4zM12 6h1v1h-1z"/></symbol><symbol id="sp-valley" viewBox="0 0 120 70"><path stroke="var(--faint,#5f6a4f)" stroke-width="1" fill="none" d="M2 2V45H118"/><path stroke="var(--faint,#5f6a4f)" stroke-width="0.5" stroke-dasharray="2 2" fill="none" d="M2 62H118"/><path class="curve" stroke="var(--yel,#f2c53d)" stroke-width="2" fill="none" d="M4 44H6V44H8V43H10V42H12V42H14V42H16V41H18V40H20V40H22V39H24V38H26V37H29V35H31V34H33V33H35V32H37V31H39V29H41V28H44V26H46V25H48V23H50V22H52V21H54V20H56V18H58V17H60V16H62V20H64V23H66V26H68V30H70V37H72V45H74V52H76V57H78V62H80V58H82V54H84V50H86V43H88V37H90V30H92V25H94V19H96V14H98V13H100V12H102V11H104V9H106V8H108V7H110V6"/><rect x="70" y="46" width="16" height="17" fill="var(--red,#e8452a)" opacity="0.18"/></symbol><symbol id="sp-car-red-a" viewBox="0 0 34 13"><path fill="#f2eeda" d="M3 0h6v1h-6zM13 3h4v1h-4zM12 4h6v1h-6zM12 5h1v1h-1zM15 5h3v1h-3zM13 6h4v1h-4zM5 9h8v1h-8zM8 11h1v1h-1zM26 11h1v1h-1z"/><path fill="var(--red,#e8452a)" d="M3 1h6v1h-6zM5 2h2v1h-2zM5 3h2v1h-2zM5 4h2v1h-2zM4 5h8v1h-8zM3 6h10v1h-10zM17 6h5v1h-5zM2 7h27v1h-27zM2 8h31v1h-31zM2 9h3v1h-3zM13 9h21v1h-21zM2 10h4v1h-4zM12 10h12v1h-12zM30 10h4v1h-4z"/><path fill="#0d1208" d="M13 5h2v1h-2zM6 10h6v1h-6zM24 10h6v1h-6z"/><path fill="#464d3c" d="M6 11h2v1h-2zM9 11h3v1h-3zM24 11h2v1h-2zM27 11h3v1h-3zM7 12h4v1h-4zM25 12h4v1h-4z"/></symbol><symbol id="sp-car-red-b" viewBox="0 0 34 13"><path fill="#f2eeda" d="M3 0h6v1h-6zM13 3h4v1h-4zM12 4h6v1h-6zM12 5h1v1h-1zM15 5h3v1h-3zM13 6h4v1h-4zM5 9h8v1h-8zM9 11h1v1h-1zM27 11h1v1h-1z"/><path fill="var(--red,#e8452a)" d="M3 1h6v1h-6zM5 2h2v1h-2zM5 3h2v1h-2zM5 4h2v1h-2zM4 5h8v1h-8zM3 6h10v1h-10zM17 6h5v1h-5zM2 7h27v1h-27zM2 8h31v1h-31zM2 9h3v1h-3zM13 9h21v1h-21zM2 10h4v1h-4zM12 10h12v1h-12zM30 10h4v1h-4z"/><path fill="#0d1208" d="M13 5h2v1h-2zM6 10h6v1h-6zM24 10h6v1h-6z"/><path fill="#ff8c3a" d="M1 7h1v1h-1zM1 8h1v1h-1z"/><path fill="var(--yel,#f2c53d)" d="M0 8h1v1h-1zM1 9h1v1h-1z"/><path fill="#464d3c" d="M6 11h3v1h-3zM10 11h2v1h-2zM24 11h3v1h-3zM28 11h2v1h-2zM7 12h4v1h-4zM25 12h4v1h-4z"/></symbol><symbol id="sp-car-blue-a" viewBox="0 0 34 13"><path fill="#f2c53d" d="M3 0h6v1h-6zM5 9h8v1h-8z"/><path fill="var(--blu,#4a72d8)" d="M3 1h6v1h-6zM5 2h2v1h-2zM5 3h2v1h-2zM5 4h2v1h-2zM4 5h8v1h-8zM3 6h10v1h-10zM17 6h5v1h-5zM2 7h4v1h-4zM8 7h21v1h-21zM2 8h4v1h-4zM8 8h25v1h-25zM2 9h3v1h-3zM13 9h21v1h-21zM2 10h4v1h-4zM12 10h12v1h-12zM30 10h4v1h-4z"/><path fill="#f2eeda" d="M13 3h4v1h-4zM12 4h6v1h-6zM12 5h1v1h-1zM15 5h3v1h-3zM13 6h4v1h-4zM8 11h1v1h-1zM26 11h1v1h-1z"/><path fill="#0d1208" d="M13 5h2v1h-2zM6 10h6v1h-6zM24 10h6v1h-6z"/><path fill="#ffffff" d="M6 7h2v1h-2zM6 8h2v1h-2z"/><path fill="#464d3c" d="M6 11h2v1h-2zM9 11h3v1h-3zM24 11h2v1h-2zM27 11h3v1h-3zM7 12h4v1h-4zM25 12h4v1h-4z"/></symbol><symbol id="sp-car-blue-b" viewBox="0 0 34 13"><path fill="#f2c53d" d="M3 0h6v1h-6zM5 9h8v1h-8z"/><path fill="var(--blu,#4a72d8)" d="M3 1h6v1h-6zM5 2h2v1h-2zM5 3h2v1h-2zM5 4h2v1h-2zM4 5h8v1h-8zM3 6h10v1h-10zM17 6h5v1h-5zM2 7h4v1h-4zM8 7h21v1h-21zM2 8h4v1h-4zM8 8h25v1h-25zM2 9h3v1h-3zM13 9h21v1h-21zM2 10h4v1h-4zM12 10h12v1h-12zM30 10h4v1h-4z"/><path fill="#f2eeda" d="M13 3h4v1h-4zM12 4h6v1h-6zM12 5h1v1h-1zM15 5h3v1h-3zM13 6h4v1h-4zM9 11h1v1h-1zM27 11h1v1h-1z"/><path fill="#0d1208" d="M13 5h2v1h-2zM6 10h6v1h-6zM24 10h6v1h-6z"/><path fill="#ff8c3a" d="M1 7h1v1h-1zM1 8h1v1h-1z"/><path fill="#ffffff" d="M6 7h2v1h-2zM6 8h2v1h-2z"/><path fill="var(--yel,#f2c53d)" d="M0 8h1v1h-1zM1 9h1v1h-1z"/><path fill="#464d3c" d="M6 11h3v1h-3zM10 11h2v1h-2zM24 11h3v1h-3zM28 11h2v1h-2zM7 12h4v1h-4zM25 12h4v1h-4z"/></symbol><symbol id="sp-bike" viewBox="0 0 18 13"><path fill="#f2eeda" d="M8 0h4v1h-4zM7 1h6v1h-6zM7 2h1v1h-1zM10 2h3v1h-3zM8 3h4v1h-4zM4 11h1v1h-1zM14 11h1v1h-1z"/><path fill="#0d1208" d="M8 2h2v1h-2z"/><path fill="var(--red,#e8452a)" d="M4 3h4v1h-4zM3 4h9v1h-9zM3 5h10v1h-10zM3 6h8v1h-8z"/><path fill="var(--blu,#4a72d8)" d="M2 6h1v1h-1zM11 6h3v1h-3zM1 7h14v1h-14zM0 8h16v1h-16z"/><path fill="#464d3c" d="M1 9h4v1h-4zM11 9h4v1h-4zM0 10h6v1h-6zM10 10h6v1h-6zM0 11h4v1h-4zM5 11h1v1h-1zM10 11h4v1h-4zM15 11h1v1h-1zM1 12h4v1h-4zM11 12h4v1h-4z"/></symbol><symbol id="sp-lights-base" viewBox="0 0 10 20"><path fill="var(--wht,#c9cdbb)" d="M1 0h8v1h-8zM1 1h1v1h-1zM8 1h1v1h-1zM1 2h1v1h-1zM8 2h1v1h-1zM1 3h1v1h-1zM8 3h1v1h-1zM1 4h1v1h-1zM8 4h1v1h-1zM1 5h1v1h-1zM8 5h1v1h-1zM1 6h1v1h-1zM8 6h1v1h-1zM1 7h1v1h-1zM8 7h1v1h-1zM1 8h1v1h-1zM8 8h1v1h-1zM1 9h1v1h-1zM8 9h1v1h-1zM1 10h1v1h-1zM8 10h1v1h-1zM1 11h1v1h-1zM8 11h1v1h-1zM1 12h1v1h-1zM8 12h1v1h-1zM1 13h1v1h-1zM8 13h1v1h-1zM1 14h8v1h-8zM4 15h2v1h-2zM4 16h2v1h-2zM4 17h2v1h-2zM4 18h2v1h-2zM4 19h2v1h-2z"/><path fill="#0d1208" d="M2 1h6v1h-6zM2 2h1v1h-1zM7 2h1v1h-1zM2 3h1v1h-1zM7 3h1v1h-1zM2 4h1v1h-1zM7 4h1v1h-1zM2 5h6v1h-6zM2 6h1v1h-1zM7 6h1v1h-1zM2 7h1v1h-1zM7 7h1v1h-1zM2 8h1v1h-1zM7 8h1v1h-1zM2 9h6v1h-6zM2 10h1v1h-1zM7 10h1v1h-1zM2 11h1v1h-1zM7 11h1v1h-1zM2 12h1v1h-1zM7 12h1v1h-1zM2 13h6v1h-6z"/><path fill="#262e1e" d="M3 2h4v1h-4zM3 3h4v1h-4zM3 4h4v1h-4zM3 6h4v1h-4zM3 7h4v1h-4zM3 8h4v1h-4zM3 10h4v1h-4zM3 11h4v1h-4zM3 12h4v1h-4z"/></symbol><symbol id="sp-lights-r" viewBox="0 0 10 20"><path fill="var(--red,#e8452a)" d="M3 2h4v1h-4zM3 3h4v1h-4zM3 4h4v1h-4z"/></symbol><symbol id="sp-lights-y" viewBox="0 0 10 20"><path fill="var(--yel,#f2c53d)" d="M3 6h4v1h-4zM3 7h4v1h-4zM3 8h4v1h-4z"/></symbol><symbol id="sp-lights-g" viewBox="0 0 10 20"><path fill="var(--grn,#7fae43)" d="M3 10h4v1h-4zM3 11h4v1h-4zM3 12h4v1h-4z"/></symbol><symbol id="sp-flag-a" viewBox="0 0 15 12"><path fill="var(--wht,#c9cdbb)" d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 7h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 10h1v1h-1zM0 11h1v1h-1z"/><path fill="#0d1208" d="M1 0h2v1h-2zM5 0h2v1h-2zM9 0h2v1h-2zM13 0h2v1h-2zM1 1h2v1h-2zM5 1h2v1h-2zM9 1h2v1h-2zM13 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM11 2h2v1h-2zM3 3h2v1h-2zM7 3h2v1h-2zM11 3h2v1h-2zM1 4h2v1h-2zM5 4h2v1h-2zM9 4h2v1h-2zM13 4h2v1h-2zM1 5h2v1h-2zM5 5h2v1h-2zM9 5h2v1h-2zM13 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM11 6h2v1h-2zM3 7h2v1h-2zM7 7h2v1h-2zM11 7h2v1h-2z"/><path fill="#f2eeda" d="M3 0h2v1h-2zM7 0h2v1h-2zM11 0h2v1h-2zM3 1h2v1h-2zM7 1h2v1h-2zM11 1h2v1h-2zM1 2h2v1h-2zM5 2h2v1h-2zM9 2h2v1h-2zM13 2h2v1h-2zM1 3h2v1h-2zM5 3h2v1h-2zM9 3h2v1h-2zM13 3h2v1h-2zM3 4h2v1h-2zM7 4h2v1h-2zM11 4h2v1h-2zM3 5h2v1h-2zM7 5h2v1h-2zM11 5h2v1h-2zM1 6h2v1h-2zM5 6h2v1h-2zM9 6h2v1h-2zM13 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM13 7h2v1h-2z"/></symbol><symbol id="sp-flag-b" viewBox="0 0 15 12"><path fill="var(--wht,#c9cdbb)" d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 7h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 10h1v1h-1zM0 11h1v1h-1z"/><path fill="#0d1208" d="M1 0h2v1h-2zM5 0h2v1h-2zM1 1h2v1h-2zM5 1h2v1h-2zM9 1h2v1h-2zM13 1h2v1h-2zM3 2h2v1h-2zM7 2h1v1h-1zM9 2h2v1h-2zM13 2h2v1h-2zM3 3h2v1h-2zM7 3h2v1h-2zM11 3h2v1h-2zM1 4h2v1h-2zM5 4h2v1h-2zM8 4h1v1h-1zM11 4h2v1h-2zM1 5h2v1h-2zM5 5h2v1h-2zM9 5h2v1h-2zM13 5h2v1h-2zM3 6h2v1h-2zM7 6h1v1h-1zM9 6h2v1h-2zM13 6h2v1h-2zM3 7h2v1h-2zM7 7h2v1h-2zM11 7h2v1h-2zM8 8h1v1h-1zM11 8h2v1h-2z"/><path fill="#f2eeda" d="M3 0h2v1h-2zM7 0h1v1h-1zM3 1h2v1h-2zM7 1h2v1h-2zM11 1h2v1h-2zM1 2h2v1h-2zM5 2h2v1h-2zM8 2h1v1h-1zM11 2h2v1h-2zM1 3h2v1h-2zM5 3h2v1h-2zM9 3h2v1h-2zM13 3h2v1h-2zM3 4h2v1h-2zM7 4h1v1h-1zM9 4h2v1h-2zM13 4h2v1h-2zM3 5h2v1h-2zM7 5h2v1h-2zM11 5h2v1h-2zM1 6h2v1h-2zM5 6h2v1h-2zM8 6h1v1h-1zM11 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM13 7h2v1h-2zM9 8h2v1h-2zM13 8h2v1h-2z"/></symbol><symbol id="sp-wheel" viewBox="0 0 16 16"><path fill="var(--wht,#c9cdbb)" d="M4 0h8v1h-8zM2 1h12v1h-12zM1 2h3v1h-3zM12 2h3v1h-3zM1 3h2v1h-2zM13 3h2v1h-2zM0 4h2v1h-2zM14 4h2v1h-2zM0 5h2v1h-2zM14 5h2v1h-2zM0 6h2v1h-2zM14 6h2v1h-2zM0 7h2v1h-2zM14 7h2v1h-2zM0 8h2v1h-2zM14 8h2v1h-2zM0 9h2v1h-2zM14 9h2v1h-2zM0 10h2v1h-2zM14 10h2v1h-2zM0 11h2v1h-2zM14 11h2v1h-2zM1 12h2v1h-2zM13 12h2v1h-2zM1 13h3v1h-3zM12 13h3v1h-3zM2 14h5v1h-5zM9 14h5v1h-5zM4 15h8v1h-8z"/><path fill="var(--red,#e8452a)" d="M6 5h4v1h-4zM4 6h8v1h-8zM2 7h5v1h-5zM9 7h5v1h-5zM2 8h5v1h-5zM9 8h5v1h-5zM4 9h8v1h-8zM6 10h4v1h-4zM7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM7 14h2v1h-2z"/><path fill="#0d1208" d="M7 7h2v1h-2zM7 8h2v1h-2z"/></symbol><symbol id="sp-lamp" viewBox="0 0 18 12"><path fill="var(--wht,#c9cdbb)" d="M1 0h3v1h-3zM1 1h1v1h-1zM4 1h1v1h-1zM1 2h1v1h-1zM4 2h1v1h-1zM1 3h1v1h-1zM4 3h1v1h-1zM1 4h1v1h-1zM4 4h1v1h-1zM1 5h1v1h-1zM4 5h1v1h-1zM1 6h1v1h-1zM4 6h1v1h-1zM1 7h1v1h-1zM4 7h1v1h-1zM1 8h1v1h-1zM4 8h1v1h-1zM1 9h3v1h-3z"/><path fill="#f2eeda" d="M2 1h2v1h-2zM2 2h2v1h-2zM2 3h2v1h-2zM2 4h2v1h-2zM2 5h2v1h-2zM2 6h2v1h-2zM2 7h2v1h-2zM2 8h2v1h-2z"/><path fill="var(--yel,#f2c53d)" d="M5 1h1v1h-1zM5 2h3v1h-3zM5 3h6v1h-6zM5 4h9v1h-9zM5 5h12v1h-12zM5 6h9v1h-9zM5 7h6v1h-6zM5 8h3v1h-3zM5 9h1v1h-1z"/><path fill="#0d1208" d="M2 10h2v1h-2zM1 11h4v1h-4z"/></symbol></defs></svg></div>
+
+<div id="hud">
+  <span>RC51 · Sociocybernetics · Oaxaca 2026</span>
+  <span class="lap" id="counter">LAP 01/16</span>
+</div>
+<div id="progress" aria-hidden="true"></div>
+<div id="navbtns">
+  <button class="prev" aria-label="Previous slide"><svg class="sp"><use href="#sp-arrow"/></svg></button>
+  <button class="next" aria-label="Next slide"><svg class="sp"><use href="#sp-arrow"/></svg></button>
+</div>
+<div id="tools">
+  <button id="themeBtn" aria-label="Switch between day and night mode" title="Day / night (D)">
+    <svg class="ic-sun" viewBox="0 0 9 9" fill="currentColor" shape-rendering="crispEdges"><path d="M4 0h1v1h-1zM1 1h1v1h-1zM7 1h1v1h-1zM3 2h3v1h-3zM2 3h5v1h-5zM0 4h1v1h-1zM2 4h5v1h-5zM8 4h1v1h-1zM2 5h5v1h-5zM3 6h3v1h-3zM1 7h1v1h-1zM7 7h1v1h-1zM4 8h1v1h-1z"/></svg>
+    <svg class="ic-moon" viewBox="0 0 8 8" fill="currentColor" shape-rendering="crispEdges"><path d="M2 0h4v1h-4zM1 1h4v1h-4zM0 2h4v1h-4zM0 3h3v1h-3zM0 4h3v1h-3zM0 5h4v1h-4zM1 6h4v1h-4zM2 7h4v1h-4z"/></svg>
+  </button>
+  <button id="zoomIn" aria-label="Zoom in" title="Zoom in (+)">+</button>
+  <button id="zoomOut" aria-label="Zoom out" title="Zoom out (-)">-</button>
+  <button id="gbBtn" aria-label="Open the guestbook comments" title="Guestbook (C)"><svg class="sp" viewBox="0 0 16 10" style="width:16px;height:10px"><use href="#sp-bubbles"/></svg></button>
+</div>
+
+<div id="gb-backdrop" hidden></div>
+<aside id="guestbook" hidden role="dialog" aria-label="Guestbook — leave a comment">
+  <div class="gb-frame">
+    <header>
+      <span class="gb-title">★ GUESTBOOK ★</span>
+      <span class="gb-sub">leave an observation — we observe you observing us</span>
+      <button id="gb-close" aria-label="Close guestbook">×</button>
+    </header>
+    <div class="gb-body">
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="960b7bef-d731-4569-8792-b6540f00a28b"
+        data-page-id="invisibility-oaxaca-2026"
+        data-page-url="https://socyb.github.io/designso/invisibility.html"
+        data-page-title="The (In)Visibility of the Technical"></div>
+      <p class="gb-off" hidden>The guestbook needs an internet connection — try again online.</p>
+    </div>
+    <footer class="gb-foot">
+      <button id="gb-wall-link" type="button">&#9733; see them big &mdash; hall of observations &#8594;</button>
+    </footer>
+  </div>
+</aside>
+
+<!-- ============ 1 · TITLE ============ -->
+<section class="slide" id="s1" aria-label="Title">
+  <svg class="bg-road sp" viewBox="0 0 120 70" aria-hidden="true">
+    <rect x="0" y="15" width="120" height="1" fill="var(--faint)"/>
+    <path fill="var(--grn)" opacity=".45" d="M6 15l6-6 6 6zM24 15l4-4 4 4zM88 15l8-8 8 8z"/>
+    <polygon points="52,16 68,16 114,70 6,70" fill="var(--panel)"/>
+    <polyline points="52,16 6,70" stroke="var(--wht)" stroke-width="1.2" fill="none"/>
+    <polyline points="68,16 114,70" stroke="var(--wht)" stroke-width="1.2" fill="none"/>
+    <g fill="var(--yel)">
+      <rect x="59.4" y="19" width="1.2" height="4"/>
+      <rect x="59" y="26" width="2" height="6"/>
+      <rect x="58.4" y="36" width="3.2" height="8"/>
+      <rect x="57.6" y="48" width="4.8" height="10"/>
+      <rect x="56.6" y="61" width="6.8" height="9"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="kicker reveal" style="--i:0">RC51 · 19th International Conference of Sociocybernetics<br>Glocal Intersections · Oaxaca, México</div>
+      <h1 class="reveal" style="--i:1">The (In)Visibility of the Technical</h1>
+      <div class="sub reveal" style="--i:2">Uncanny Valley, Explainability, and AI Alignment</div>
+      <div class="authors reveal" style="--i:3">Jorge Cardiel Herrera · UNAM</div>
+      <div class="session reveal" style="--i:4">Tuesday · 4 August 2026 · 11:15–11:40<br>UNAM University Extension · on-site</div>
+      <div class="pressstart reveal blink" style="--i:6">Press &gt; to start</div>
+    </div>
+    <div class="title-side">
+      <div class="race-scene reveal" style="--i:1" aria-hidden="true">
+        <svg class="sp lights lights-tree" viewBox="0 0 10 20">
+          <use href="#sp-lights-base"/>
+          <use class="lampR" href="#sp-lights-r"/>
+          <use class="lampY" href="#sp-lights-y"/>
+          <use class="lampG" href="#sp-lights-g"/>
+        </svg>
+        <svg class="sp car c-blue frames fast" viewBox="0 0 34 13"><use class="f1" href="#sp-car-blue-a"/><use class="f2" href="#sp-car-blue-b"/></svg>
+        <svg class="sp car c-red frames fast" viewBox="0 0 34 13"><use class="f1" href="#sp-car-red-a"/><use class="f2" href="#sp-car-red-b"/></svg>
+      </div>
+      <div class="qr-card reveal" style="--i:5">
+        <span class="qr-tile"><svg viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="QR code linking to this presentation"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h3v1h-3zM16 0h1v1h-1zM18 0h3v1h-3zM23 0h2v1h-2zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h2v1h-2zM11 1h2v1h-2zM14 1h1v1h-1zM16 1h2v1h-2zM20 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM10 2h1v1h-1zM12 2h4v1h-4zM18 2h1v1h-1zM20 2h1v1h-1zM23 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h2v1h-2zM11 3h2v1h-2zM15 3h1v1h-1zM18 3h2v1h-2zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h1v1h-1zM11 4h3v1h-3zM16 4h1v1h-1zM18 4h1v1h-1zM21 4h2v1h-2zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM14 5h3v1h-3zM21 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM8 7h1v1h-1zM11 7h1v1h-1zM14 7h6v1h-6zM23 7h2v1h-2zM0 8h1v1h-1zM2 8h2v1h-2zM5 8h3v1h-3zM9 8h1v1h-1zM12 8h1v1h-1zM14 8h5v1h-5zM21 8h1v1h-1zM26 8h1v1h-1zM29 8h1v1h-1zM31 8h2v1h-2zM1 9h2v1h-2zM5 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM13 9h2v1h-2zM16 9h4v1h-4zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h2v1h-2zM29 9h2v1h-2zM32 9h1v1h-1zM0 10h2v1h-2zM4 10h4v1h-4zM9 10h1v1h-1zM11 10h3v1h-3zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h2v1h-2zM23 10h2v1h-2zM27 10h3v1h-3zM31 10h2v1h-2zM0 11h4v1h-4zM8 11h2v1h-2zM11 11h2v1h-2zM16 11h2v1h-2zM22 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM6 12h3v1h-3zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM27 12h3v1h-3zM31 12h2v1h-2zM0 13h1v1h-1zM2 13h2v1h-2zM7 13h2v1h-2zM11 13h1v1h-1zM13 13h2v1h-2zM20 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM29 13h3v1h-3zM0 14h3v1h-3zM4 14h4v1h-4zM9 14h2v1h-2zM14 14h1v1h-1zM17 14h3v1h-3zM21 14h1v1h-1zM24 14h1v1h-1zM26 14h2v1h-2zM29 14h1v1h-1zM0 15h2v1h-2zM4 15h2v1h-2zM7 15h2v1h-2zM10 15h1v1h-1zM14 15h2v1h-2zM20 15h3v1h-3zM24 15h4v1h-4zM29 15h2v1h-2zM0 16h2v1h-2zM4 16h3v1h-3zM8 16h2v1h-2zM12 16h1v1h-1zM19 16h4v1h-4zM24 16h3v1h-3zM28 16h3v1h-3zM0 17h1v1h-1zM3 17h2v1h-2zM7 17h1v1h-1zM10 17h2v1h-2zM13 17h3v1h-3zM20 17h5v1h-5zM26 17h1v1h-1zM28 17h2v1h-2zM31 17h2v1h-2zM1 18h1v1h-1zM3 18h1v1h-1zM6 18h2v1h-2zM9 18h3v1h-3zM15 18h2v1h-2zM18 18h1v1h-1zM20 18h1v1h-1zM22 18h1v1h-1zM27 18h2v1h-2zM30 18h1v1h-1zM0 19h1v1h-1zM2 19h1v1h-1zM4 19h2v1h-2zM7 19h4v1h-4zM12 19h2v1h-2zM15 19h1v1h-1zM17 19h2v1h-2zM28 19h1v1h-1zM31 19h1v1h-1zM3 20h1v1h-1zM5 20h3v1h-3zM9 20h2v1h-2zM12 20h2v1h-2zM16 20h1v1h-1zM19 20h1v1h-1zM21 20h1v1h-1zM27 20h1v1h-1zM29 20h2v1h-2zM32 20h1v1h-1zM0 21h1v1h-1zM2 21h4v1h-4zM7 21h1v1h-1zM10 21h1v1h-1zM12 21h6v1h-6zM19 21h2v1h-2zM23 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM2 22h10v1h-10zM13 22h3v1h-3zM18 22h1v1h-1zM23 22h1v1h-1zM26 22h2v1h-2zM29 22h4v1h-4zM1 23h4v1h-4zM10 23h3v1h-3zM14 23h2v1h-2zM18 23h3v1h-3zM24 23h1v1h-1zM26 23h1v1h-1zM29 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM5 24h2v1h-2zM8 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM16 24h2v1h-2zM19 24h2v1h-2zM22 24h8v1h-8zM8 25h3v1h-3zM12 25h1v1h-1zM14 25h3v1h-3zM19 25h1v1h-1zM21 25h4v1h-4zM28 25h2v1h-2zM0 26h7v1h-7zM8 26h2v1h-2zM17 26h3v1h-3zM22 26h3v1h-3zM26 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h2v1h-2zM12 27h1v1h-1zM14 27h5v1h-5zM21 27h1v1h-1zM23 27h2v1h-2zM28 27h5v1h-5zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM10 28h2v1h-2zM13 28h2v1h-2zM16 28h13v1h-13zM30 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h7v1h-7zM16 29h1v1h-1zM20 29h1v1h-1zM23 29h2v1h-2zM27 29h1v1h-1zM29 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM8 30h2v1h-2zM13 30h1v1h-1zM15 30h2v1h-2zM21 30h3v1h-3zM26 30h2v1h-2zM0 31h1v1h-1zM6 31h1v1h-1zM11 31h3v1h-3zM17 31h1v1h-1zM23 31h2v1h-2zM27 31h2v1h-2zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM11 32h2v1h-2zM14 32h1v1h-1zM16 32h4v1h-4zM21 32h1v1h-1zM23 32h1v1h-1zM28 32h1v1h-1zM30 32h1v1h-1z"/></svg></span>
+      </div>
+      <div class="qr-url">scan to follow along<br>socyb.github.io/designso/invisibility2.html</div>
+    </div>
+  </div>
+  <div class="frieze" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 2 · ROADMAP ============ -->
+<section class="slide" id="s2" aria-label="Roadmap">
+  <div class="wrap">
+    <div class="kicker">Roadmap <span class="no">· one valley, four levels</span></div>
+    <h2 class="reveal" style="--i:0">If the technical becomes visible only when it breaks down, how can critique address infrastructures that escape attention <em>precisely because they work</em>?</h2>
+    <p class="reveal" style="--i:1">The <b>uncanny valley</b> is the privileged site where that question becomes empirical in AI.</p>
+    <div class="levels" style="margin-top:16px">
+      <div class="lv reveal" style="--i:2"><span class="n">01</span><span class="t"><b>Invisibilization</b> — how technologies disappear into the background <span class="cite">(Nosthoff &amp; Maschewski; Latour)</span></span></div>
+      <div class="lv reveal" style="--i:3"><span class="n">02</span><span class="t"><b>Interruption</b> — the uncanny valley as spontaneous breakdown <span class="cite">(Mori)</span></span></div>
+      <div class="lv reveal" style="--i:4"><span class="n">03</span><span class="t"><b>Steering</b> — explainability &amp; alignment as governmentality <span class="cite">(Ashby; Nassehi; Foucault)</span></span></div>
+      <div class="lv reveal" style="--i:5"><span class="n">04</span><span class="t"><b>Critique</b> — resonance &amp; estrangement as practices for the remainder <span class="cite">(Rosa; Plessner; Brecht)</span></span></div>
+    </div>
+    <div class="valley-fig reveal" style="--i:6;max-width:480px">
+      <svg viewBox="0 0 120 70" class="sp"><use href="#sp-valley"/></svg>
+      <p class="vcap">invisibilization · interruption · steering · critique</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · INVISIBILIZATION ============ -->
+<section class="slide" id="s3" aria-label="Invisibilization">
+  <div class="wrap">
+    <div class="kicker">Argument 01 <span class="no">· invisibilization</span></div>
+    <h2>Technology disappears into the lifeworld</h2>
+    <ul class="pts">
+      <li class="reveal" style="--i:0">Contemporary technologies become invisible as they become embedded in everyday life — they function as the <b>unnoticed background of experience</b>.</li>
+      <li class="am reveal" style="--i:1">Wearables sink into the <em>Erfahrungs- und Lebenswelt</em>, expanding <em>“fast natürlich”</em> — almost naturally — and precisely thereby gain <b><em>normative Kraft</em></b> <span class="cite">(Nosthoff &amp; Maschewski, 2019, pp. 46–47)</span>.</li>
+      <li class="co reveal" style="--i:2"><b>Invisibility is not neutrality</b>: the less we see it, the more it formats conduct.</li>
+    </ul>
+    <div class="timeline reveal" style="--i:3">
+      <figure style="opacity:1"><svg class="sp" viewBox="0 0 8 9" style="width:40px"><use href="#sp-watch"/></svg><figcaption>wearable</figcaption></figure>
+      <span class="ar">→</span>
+      <figure style="opacity:.72"><svg class="sp" viewBox="0 0 8 10" style="width:38px"><use href="#sp-phone"/></svg><figcaption>smartphone</figcaption></figure>
+      <span class="ar">→</span>
+      <figure style="opacity:.48"><svg class="sp" viewBox="0 0 10 10" style="width:44px"><use href="#sp-speaker"/></svg><figcaption>voice assistant</figcaption></figure>
+      <span class="ar">→</span>
+      <figure style="opacity:.26"><svg class="sp" viewBox="0 0 12 9" style="width:48px"><use href="#sp-chat"/></svg><figcaption>LLM</figcaption></figure>
+    </div>
+    <p class="big reveal" style="--i:4">Each generation aims at <span class="hl-t">deeper embedding</span> — at disappearing better.</p>
+  </div>
+</section>
+
+<!-- ============ 4 · BREAKDOWN ============ -->
+<section class="slide" id="s4" aria-label="Visible only in breakdown">
+  <div class="wrap">
+    <div class="kicker">Argument 02 <span class="no">· invisibilization</span></div>
+    <h2>Visible only in breakdown: the critique dilemma</h2>
+    <div class="cols">
+      <div>
+        <ul class="pts">
+          <li class="reveal" style="--i:0">Technical work is <b>blackboxed by its own success</b>: when a machine runs, no one looks inside. The technical becomes visible only when it <b>stops working</b> <span class="cite">(Latour, 1999)</span>.</li>
+          <li class="am reveal" style="--i:1">Technology as <b>the social made durable</b> — the crystallization of social relations into stable, unquestioned forms.</li>
+          <li class="co reveal" style="--i:2">The dilemma: <b>critique needs visibility, but well-functioning infrastructure withdraws from view.</b></li>
+        </ul>
+        <p class="big reveal" style="--i:3">Waiting for breakdown is not a method. <span class="hl-t">Is there a breakdown that happens <em>without</em> the system failing?</span></p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+        <svg class="sp float" viewBox="0 0 14 9" style="width:clamp(120px,16vw,190px)"><use href="#sp-bbox"/></svg>
+        <p class="small" style="text-align:center">the black box — cracking<br>(transition: enter the valley)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · ENTER THE VALLEY ============ -->
+<section class="slide" id="s5" aria-label="Enter the valley">
+  <div class="wrap">
+    <div class="kicker">Argument 03 <span class="no">· interruption</span></div>
+    <h2>Enter the valley <span class="cite" style="font-size:.5em">(Mori, 1970/2012)</span></h2>
+    <div class="valley-fig reveal" style="--i:0">
+      <svg viewBox="0 0 120 78" class="sp">
+        <use href="#sp-valley" width="120" height="70"/>
+        <rect class="vmark t" x="19" y="39" width="2" height="2"/>
+        <text class="vlabel" x="7" y="36">industrial robot</text>
+        <rect class="vmark t" x="49" y="21" width="2" height="2"/>
+        <text class="vlabel" x="34" y="18">humanoid robot</text>
+        <rect class="vmark t" x="59" y="15" width="2" height="2"/>
+        <text class="vlabel hi" x="50" y="11">bunraku puppet</text>
+        <rect class="vmark" x="73" y="51" width="2" height="2"/>
+        <text class="vlabel co" x="80" y="54">prosthetic hand</text>
+        <rect class="vmark" x="77" y="61" width="2" height="2"/>
+        <text class="vlabel co" x="82" y="67">corpse / zombie</text>
+        <rect class="vmark t" x="109" y="5" width="2" height="2"/>
+        <text class="vlabel hi" x="86" y="4">healthy person</text>
+        <text class="vlabel" x="4" y="57">affinity -</text>
+        <text class="vlabel" x="4" y="8">affinity +</text>
+        <text class="vlabel" x="44" y="76">human likeness</text>
+        <text class="vlabel co" x="68" y="58">the valley</text>
+      </svg>
+    </div>
+    <ul class="pts">
+      <li class="reveal" style="--i:1">Affinity rises with human likeness, then <b>plunges into eeriness</b> just before full human presence — <em>“from empathy to revulsion”</em> <span class="cite">(Mori, 1970/2012, p. 98)</span>.</li>
+      <li class="am reveal" style="--i:2">Mori’s own advice: <b>avoid the valley</b> — aim at moderate human likeness. The valley has always been treated as a <b>design flaw to be engineered away</b> <span class="cite">(p. 100)</span>.</li>
+      <li class="co reveal" style="--i:3">Our reframe: the valley is not a defect but a <b>sociotechnical interruption</b> — the moment where assimilation visibly fails.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 · THE VALLEY TODAY ============ -->
+<section class="slide" id="s6" aria-label="The valley today">
+  <div class="wrap">
+    <div class="kicker">Argument 04 <span class="no">· interruption</span></div>
+    <h2>The valley today: AI that fails to disappear</h2>
+    <div class="cols">
+      <div>
+        <ul class="pts">
+          <li class="reveal" style="--i:0">LLMs, synthetic voices, generative avatars hover <b>between the familiar and the strange</b> — neither fully naturalized nor fully alien.</li>
+          <li class="am reveal" style="--i:1">The unease is <b>informative</b>: it exposes the work required to normalize artificial agents — work that is invisible everywhere else.</li>
+          <li class="li reveal" style="--i:2">The valley is a <b>spontaneous breakdown</b>: it returns visibility to the technical <em>without</em> a deliberate critical operation and <em>without</em> the system failing — the answer to the dilemma of Argument 02.</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center">
+        <svg class="sp" viewBox="0 0 16 11" style="width:clamp(110px,14vw,160px)"><use href="#sp-glitch"/></svg>
+        <div class="glitch-bubble reveal" style="--i:3">Of course! The three main points are<span class="mrk">&lt;/span&gt;&lt;div class="msg-</span>1. The first point is that&nbsp;<span class="mrk">{"role":"assistant","content":</span>…</div>
+        <p class="small" style="text-align:center">the glitch: the substrate showing through<br>the smooth surface of sense — a micro-valley</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · CHANGE IN ORDER NOT TO CHANGE ============ -->
+<section class="slide" id="s7" aria-label="Change in order not to change">
+  <div class="wrap">
+    <div class="kicker">Argument 05 <span class="no">· steering</span></div>
+    <h2>Change in order not to change</h2>
+    <p class="reveal" style="--i:0">Why does the industry work so hard to smooth the valley? Because systems preserve themselves through <b>regulated change</b>.</p>
+    <div class="loop reveal" style="--i:1">
+      <span class="st">disturbance</span><span class="ar">→</span>
+      <span class="st">regulator</span><span class="ar">→</span>
+      <span class="st">essential variables kept stable</span><span class="ar">→</span>
+      <span class="st back">adaptation &#8635;</span>
+    </div>
+    <ul class="pts">
+      <li class="reveal" style="--i:2"><b>Ashby</b>: regulation blocks the passage of disturbances to the <b>essential variables</b>; the homeostat; <b>ultrastability</b> — stability maintained <em>through</em> adaptation <span class="cite">(Ashby, 1956, pp. 42–48, 125–129)</span>.</li>
+      <li class="am reveal" style="--i:3"><b>Nassehi</b>: <em>Trägheit</em> — social systems persist in their patterns, absorbing irritations without altering structure <span class="cite">(Nassehi, 2019)</span>.</li>
+      <li class="ma reveal" style="--i:4">Self-organization is a <b>double figure</b>: <span class="hl-a">inertia</span> (reproducing form) <em>and</em> <span class="hl-l">emergence</span> (producing novelty) — never one without the other.</li>
+    </ul>
+    <p class="big reveal" style="--i:5">Smoothing the valley is the paradigm case: the system changes — better avatars, finer voices — precisely <span class="hl-o">in order not to change</span>: to complete invisibilization.</p>
+  </div>
+</section>
+
+<!-- ============ 8 · GOVERNMENTALITY ============ -->
+<section class="slide" id="s8" aria-label="Steering the drift">
+  <div class="wrap">
+    <div class="kicker">Argument 06 <span class="no">· steering</span></div>
+    <h2>Steering the drift: governmentality</h2>
+    <div class="cols">
+      <div>
+        <ul class="pts">
+          <li class="reveal" style="--i:0"><b>Foucault</b>: to govern is not to prohibit change but to <b>manage circulation</b> — security works on milieus, populations, flows: <em>“the coexistence and circulation of men”</em> <span class="cite">(Foucault, 2004/2007, p. 258)</span>.</li>
+          <li class="am reveal" style="--i:1">Etymology as argument: <b><em>kybernetes</em> = helmsman</b> — <em>cybernetics</em> and <em>government</em> share a root. <b>To govern is to pilot drift, not to stop the ship.</b></li>
+          <li class="co reveal" style="--i:2">Once AI became socially visible — post-valley — <b>two steering programs</b> emerged to govern it.</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;justify-content:center">
+        <svg class="sp steer" viewBox="0 0 16 16" style="width:clamp(80px,10vw,120px)"><use href="#sp-wheel"/></svg>
+        <div class="chips" style="flex-direction:column;align-items:stretch">
+          <span class="chip t reveal" style="--i:3">opacity &#8594; explainability</span>
+          <span class="chip m reveal" style="--i:4">drift &#8594; alignment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 · EXPLAINABILITY ============ -->
+<section class="slide" id="s9" aria-label="Explainability">
+  <div class="wrap">
+    <div class="kicker">Argument 07 <span class="no">· steering</span></div>
+    <h2>Explainability: governing opacity</h2>
+    <div class="cols">
+      <div>
+        <ul class="pts">
+          <li class="reveal" style="--i:0">XAI promises to render opaque operations intelligible — but what it produces are <b>acceptable accounts</b>, not windows into the machine.</li>
+          <li class="am reveal" style="--i:1">A mode of governmentality: it manages opacity by <b>translating system operations into narratives a social audience can accept</b> <span class="cite">(cf. Nassehi, 2019)</span>.</li>
+          <li class="co reveal" style="--i:2">Constructivist point: every explanation is an <b>observer’s selection</b> — it makes some operations legible <b>while leaving others obscure</b>.</li>
+        </ul>
+        <p class="big reveal" style="--i:3">Legibility is <span class="hl-t">redistributed</span>, not achieved.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+        <svg class="sp float" viewBox="0 0 18 12" style="width:clamp(110px,13vw,160px)"><use href="#sp-lamp"/></svg>
+        <p class="small" style="text-align:center">the lens illuminates one region —<br>and casts shadow on another</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · ALIGNMENT ============ -->
+<section class="slide" id="s10" aria-label="Alignment">
+  <div class="wrap">
+    <div class="kicker">Argument 08 <span class="no">· steering</span></div>
+    <h2>Alignment: governing drift</h2>
+    <ul class="pts">
+      <li class="reveal" style="--i:0">Alignment promises behavior steered toward acceptable norms — RLHF, constitutions, guardrails.</li>
+      <li class="ma reveal" style="--i:1">The second mode of governmentality: it manages <b>behavioral drift</b> by translating open-ended behavior into <b>steerable conduct</b>.</li>
+      <li class="am reveal" style="--i:2">Alignment is not equilibrium: it is <b>the ongoing steering of structural drift</b> — Ashby’s helmsman, now inside the model. <b>Misalignment is not an accident to be eliminated but the permanent horizon of the practice.</b></li>
+    </ul>
+    <div class="corridor reveal" style="--i:3">
+      <svg viewBox="0 0 140 40" class="sp">
+        <path stroke="var(--faint,#5f6a4f)" stroke-width="1" stroke-dasharray="3 2" fill="none" d="M2 8H138M2 32H138"/>
+        <path stroke="var(--red,#e8452a)" stroke-width="2" fill="none" d="M2 30H14V12H26V26H40V10H54V24H68V14H82V25H96V13H110V22H124V16H138"/>
+        <text class="vlabel" x="4" y="6">corridor of acceptable conduct</text>
+        <text class="vlabel co" x="20" y="38">the corridor never closes into a point</text>
+      </svg>
+    </div>
+    <p class="big reveal" style="--i:4">Both programs promise <span class="hl-t">social acceptability</span>: explainability for what the system <em>is</em>, alignment for what it <em>does</em>.</p>
+  </div>
+</section>
+
+<!-- ============ 11 · THE REMAINDER ============ -->
+<section class="slide" id="s11" aria-label="The remainder">
+  <div class="wrap">
+    <div class="kicker">Argument 09 <span class="no">· critique</span></div>
+    <h2>The remainder: alterity is redistributed, not eliminated</h2>
+    <ul class="pts">
+      <li class="reveal" style="--i:0"><b>Neither explainability nor alignment eliminates the radical otherness of AI models.</b> Explainability leaves obscurity behind every account; alignment modulates the gap without abolishing misalignment.</li>
+      <li class="am reveal" style="--i:1">The valley persists — and that persistence is <b>valuable</b>: it is the last place where AI remains visible <em>as</em> technical.</li>
+    </ul>
+    <blockquote class="quote ma reveal" style="--i:2">“…a hologram [is] an image of an object which catches not only its actual state but also its interference pattern with other possibilities that were lost when the final state is actualized.”
+      <span class="who">Žižek (2025, p. 29) — the valley is that interference pattern: the lost possibilities of assimilation, still showing</span>
+    </blockquote>
+    <div class="valley-fig reveal" style="--i:3;max-width:440px">
+      <svg viewBox="0 0 120 70" class="sp"><use href="#sp-valley"/></svg>
+      <p class="vcap hl-o" style="color:var(--red)">what steering cannot smooth</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 · RESONANCE ============ -->
+<section class="slide" id="s12" aria-label="Resonance">
+  <div class="wrap">
+    <div class="kicker">Argument 10 <span class="no">· critique</span></div>
+    <h2>Inhabiting the gap I: resonance</h2>
+    <div style="display:flex;justify-content:center;align-items:center;gap:clamp(16px,4vw,40px);margin:4px 0 14px">
+      <svg class="sp" viewBox="0 0 24 8" style="width:clamp(150px,22vw,240px)"><use href="#sp-wave"/></svg>
+      <svg class="sp float" viewBox="0 0 18 13" style="width:clamp(64px,8vw,96px)"><use href="#sp-bike"/></svg>
+    </div>
+    <ul class="pts">
+      <li class="reveal" style="--i:0">If the gap cannot be eliminated, how do we live with it? First practice: <b>resonance</b>.</li>
+      <li class="am reveal" style="--i:1">Rosa’s <b><em>Anverwandlung</em></b> — transformative assimilation: a reciprocal relation in which <b>both sides are changed</b>; the gap is <b>modulated like a musical relation</b>, not abolished <span class="cite">(Rosa, 2016/2019)</span>.</li>
+      <li class="li reveal" style="--i:2">Resonance here is not a feeling but a <b>critical practice</b>: working <em>with</em> the gap as a relation to be tuned.</li>
+    </ul>
+    <p class="big reveal" style="--i:3">The warning built into the concept: <span class="hl-o">total resonance would be total invisibilization</span> — perfect assimilation is the end of the relation, not its fulfillment.</p>
+  </div>
+</section>
+
+<!-- ============ 13 · ESTRANGEMENT ============ -->
+<section class="slide" id="s13" aria-label="Estrangement">
+  <div class="wrap">
+    <div class="kicker">Argument 11 <span class="no">· critique</span></div>
+    <h2>Inhabiting the gap II: estrangement</h2>
+    <div style="display:flex;justify-content:center;gap:26px;margin:4px 0 14px;align-items:center">
+      <svg class="sp" viewBox="0 0 24 9" style="width:clamp(150px,22vw,240px)"><use href="#sp-ecc"/></svg>
+      <svg class="sp float" viewBox="0 0 10 10" style="width:clamp(40px,5vw,60px)"><use href="#sp-mask"/></svg>
+    </div>
+    <ul class="pts">
+      <li class="reveal" style="--i:0"><b>Plessner</b>: <b>eccentric positionality</b> — the human can step outside its own center, place a distance between itself and its experience: <em>“zugleich aus ihr heraus, exzentrisch”</em> <span class="cite">(Plessner, 1928/1975, pp. 14–15)</span>. <b>Distance is anthropologically ours to take.</b></li>
+      <li class="am reveal" style="--i:1"><b>Brecht</b>: <em>Verfremdungseffekt</em> — make the familiar strange so it becomes visible and thinkable again <span class="cite">(Brecht, 1964)</span>.</li>
+      <li class="co reveal" style="--i:2">Applied to AI: <b>resist premature naturalization</b> — keep the assistant strange, keep the voice marked as synthetic, <b>keep the seams visible</b>. Estrangement does by art what the valley does spontaneously.</li>
+    </ul>
+    <blockquote class="quote am reveal" style="--i:3">“Science fiction is an anti-inevitabilist literature… Far more important than what the gadget does is who it does it to and who it does it for.”
+      <span class="who">Doctorow (2026, pp. 12–13) — estrangement’s political edge: nothing about these systems is inevitable</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ 14 · CONCLUSIONS ============ -->
+<section class="slide" id="s14" aria-label="Conclusions and contact">
+  <div class="wrap">
+    <div class="kicker">Conclusiones <span class="no">· continue?</span></div>
+    <h2><svg class="sp frames slow" viewBox="0 0 15 12" style="display:inline-block;width:30px;height:auto;vertical-align:middle;margin-right:8px"><use class="f1" href="#sp-flag-a"/><use class="f2" href="#sp-flag-b"/></svg>Four takeaways</h2>
+    <div class="pgrid">
+      <div class="p reveal" style="--i:0;border-color:var(--blu)"><b>01 · interruption</b>The uncanny valley is a <b>sociotechnical interruption</b>, not a design flaw — sociocybernetics’ privileged empirical site for AI.</div>
+      <div class="p reveal" style="--i:1;border-color:var(--wht)"><b>02 · governmentality</b>Explainability and alignment are <b>programs of sociotechnical governmentality</b> — complementary steerings of opacity and drift.</div>
+      <div class="p reveal" style="--i:2;border-color:var(--red)"><b>03 · the remainder</b>Neither eliminates alterity. <b>Smoothing the valley completely would complete invisibilization</b> — AI beyond critique.</div>
+      <div class="p reveal" style="--i:3;border-color:var(--grn)"><b>04 · critique</b>The task shifts from devices of control to a <b>politics of resonance and estrangement</b>: inhabiting the gap, not closing it.</div>
+    </div>
+    <blockquote class="quote reveal" style="--i:4">Preserving the valley is preserving the possibility of critique.</blockquote>
+    <div class="valley-fig reveal" style="--i:5;max-width:380px">
+      <svg viewBox="0 0 120 70" class="sp"><use href="#sp-valley"/></svg>
+      <p class="vcap">critical distance lives here</p>
+    </div>
+    <div class="contact">
+      <div class="row reveal" style="--i:6">
+        <svg class="sp" viewBox="0 0 14 9"><use href="#sp-mail"/></svg>
+        <b>Jorge Cardiel</b>
+        <a href="mailto:jorgecardiel@comunidad.unam.mx">jorgecardiel@comunidad.unam.mx</a>
+      </div>
+      <div class="row reveal" style="--i:7">
+        <button class="chip t gb-invite" type="button">&#9658; sign the guestbook — leave us an observation</button>
+      </div>
+    </div>
+    <div class="footline">RC51 · 19th International Conference of Sociocybernetics · Glocal Intersections · Oaxaca 2026 · socyb.github.io/designso/invisibility2.html</div>
+  </div>
+  <div class="frieze" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 15 · REFERENCES ============ -->
+<section class="slide" id="s15" aria-label="References">
+  <div class="wrap">
+    <div class="kicker">References <span class="no">· APA 7 · on screen during Q&amp;A</span></div>
+    <h2>References</h2>
+    <div class="refs reveal" style="--i:0">
+      <p>Ashby, W. R. (1956). <i>An introduction to cybernetics</i>. Chapman &amp; Hall.</p>
+      <p>Brecht, B. (1964). <i>Brecht on theatre: The development of an aesthetic</i> (J. Willett, Ed. &amp; Trans.). Hill and Wang.</p>
+      <p>Doctorow, C. (2026). <i>The reverse centaur’s guide to life after AI</i>. MCD.</p>
+      <p>Foucault, M. (2007). <i>Security, territory, population: Lectures at the Collège de France, 1977–1978</i> (G. Burchell, Trans.). Palgrave Macmillan. (Original work published 2004)</p>
+      <p>Latour, B. (1999). <i>Pandora’s hope: Essays on the reality of science studies</i>. Harvard University Press.</p>
+      <p>Mori, M. (2012). The uncanny valley (K. F. MacDorman &amp; N. Kageki, Trans.). <i>IEEE Robotics &amp; Automation Magazine, 19</i>(2), 98–100. https://doi.org/10.1109/MRA.2012.2192811 (Original work published 1970)</p>
+      <p>Nassehi, A. (2019). <i>Muster: Theorie der digitalen Gesellschaft</i> [Patterns: Theory of the digital society]. C. H. Beck.</p>
+      <p>Nosthoff, A.-V., &amp; Maschewski, F. (2019). <i>Die Gesellschaft der Wearables: Digitale Verführung und soziale Kontrolle</i> [The society of wearables: Digital seduction and social control]. Nicolai Publishing.</p>
+      <p>Plessner, H. (1975). <i>Die Stufen des Organischen und der Mensch: Einleitung in die philosophische Anthropologie</i> (3rd ed.). De Gruyter. (Original work published 1928)</p>
+      <p>Rosa, H. (2019). <i>Resonance: A sociology of our relationship to the world</i> (J. C. Wagner, Trans.). Polity Press. (Original work published 2016)</p>
+      <p>Žižek, S. (2025). <i>Against progress</i>. Bloomsbury Academic.</p>
+    </div>
+    <div class="qr-card" style="margin-top:18px">
+      <span class="qr-tile"><svg viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="QR code linking to this presentation"><path fill="currentColor" d="M0 0h7v1h-7zM8 0h3v1h-3zM16 0h1v1h-1zM18 0h3v1h-3zM23 0h2v1h-2zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h2v1h-2zM11 1h2v1h-2zM14 1h1v1h-1zM16 1h2v1h-2zM20 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM10 2h1v1h-1zM12 2h4v1h-4zM18 2h1v1h-1zM20 2h1v1h-1zM23 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h2v1h-2zM11 3h2v1h-2zM15 3h1v1h-1zM18 3h2v1h-2zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h1v1h-1zM11 4h3v1h-3zM16 4h1v1h-1zM18 4h1v1h-1zM21 4h2v1h-2zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM14 5h3v1h-3zM21 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM8 7h1v1h-1zM11 7h1v1h-1zM14 7h6v1h-6zM23 7h2v1h-2zM0 8h1v1h-1zM2 8h2v1h-2zM5 8h3v1h-3zM9 8h1v1h-1zM12 8h1v1h-1zM14 8h5v1h-5zM21 8h1v1h-1zM26 8h1v1h-1zM29 8h1v1h-1zM31 8h2v1h-2zM1 9h2v1h-2zM5 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM13 9h2v1h-2zM16 9h4v1h-4zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h2v1h-2zM29 9h2v1h-2zM32 9h1v1h-1zM0 10h2v1h-2zM4 10h4v1h-4zM9 10h1v1h-1zM11 10h3v1h-3zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h2v1h-2zM23 10h2v1h-2zM27 10h3v1h-3zM31 10h2v1h-2zM0 11h4v1h-4zM8 11h2v1h-2zM11 11h2v1h-2zM16 11h2v1h-2zM22 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM32 11h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM6 12h3v1h-3zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM27 12h3v1h-3zM31 12h2v1h-2zM0 13h1v1h-1zM2 13h2v1h-2zM7 13h2v1h-2zM11 13h1v1h-1zM13 13h2v1h-2zM20 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM29 13h3v1h-3zM0 14h3v1h-3zM4 14h4v1h-4zM9 14h2v1h-2zM14 14h1v1h-1zM17 14h3v1h-3zM21 14h1v1h-1zM24 14h1v1h-1zM26 14h2v1h-2zM29 14h1v1h-1zM0 15h2v1h-2zM4 15h2v1h-2zM7 15h2v1h-2zM10 15h1v1h-1zM14 15h2v1h-2zM20 15h3v1h-3zM24 15h4v1h-4zM29 15h2v1h-2zM0 16h2v1h-2zM4 16h3v1h-3zM8 16h2v1h-2zM12 16h1v1h-1zM19 16h4v1h-4zM24 16h3v1h-3zM28 16h3v1h-3zM0 17h1v1h-1zM3 17h2v1h-2zM7 17h1v1h-1zM10 17h2v1h-2zM13 17h3v1h-3zM20 17h5v1h-5zM26 17h1v1h-1zM28 17h2v1h-2zM31 17h2v1h-2zM1 18h1v1h-1zM3 18h1v1h-1zM6 18h2v1h-2zM9 18h3v1h-3zM15 18h2v1h-2zM18 18h1v1h-1zM20 18h1v1h-1zM22 18h1v1h-1zM27 18h2v1h-2zM30 18h1v1h-1zM0 19h1v1h-1zM2 19h1v1h-1zM4 19h2v1h-2zM7 19h4v1h-4zM12 19h2v1h-2zM15 19h1v1h-1zM17 19h2v1h-2zM28 19h1v1h-1zM31 19h1v1h-1zM3 20h1v1h-1zM5 20h3v1h-3zM9 20h2v1h-2zM12 20h2v1h-2zM16 20h1v1h-1zM19 20h1v1h-1zM21 20h1v1h-1zM27 20h1v1h-1zM29 20h2v1h-2zM32 20h1v1h-1zM0 21h1v1h-1zM2 21h4v1h-4zM7 21h1v1h-1zM10 21h1v1h-1zM12 21h6v1h-6zM19 21h2v1h-2zM23 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM2 22h10v1h-10zM13 22h3v1h-3zM18 22h1v1h-1zM23 22h1v1h-1zM26 22h2v1h-2zM29 22h4v1h-4zM1 23h4v1h-4zM10 23h3v1h-3zM14 23h2v1h-2zM18 23h3v1h-3zM24 23h1v1h-1zM26 23h1v1h-1zM29 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM5 24h2v1h-2zM8 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM16 24h2v1h-2zM19 24h2v1h-2zM22 24h8v1h-8zM8 25h3v1h-3zM12 25h1v1h-1zM14 25h3v1h-3zM19 25h1v1h-1zM21 25h4v1h-4zM28 25h2v1h-2zM0 26h7v1h-7zM8 26h2v1h-2zM17 26h3v1h-3zM22 26h3v1h-3zM26 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h2v1h-2zM12 27h1v1h-1zM14 27h5v1h-5zM21 27h1v1h-1zM23 27h2v1h-2zM28 27h5v1h-5zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM10 28h2v1h-2zM13 28h2v1h-2zM16 28h13v1h-13zM30 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h7v1h-7zM16 29h1v1h-1zM20 29h1v1h-1zM23 29h2v1h-2zM27 29h1v1h-1zM29 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM8 30h2v1h-2zM13 30h1v1h-1zM15 30h2v1h-2zM21 30h3v1h-3zM26 30h2v1h-2zM0 31h1v1h-1zM6 31h1v1h-1zM11 31h3v1h-3zM17 31h1v1h-1zM23 31h2v1h-2zM27 31h2v1h-2zM32 31h1v1h-1zM0 32h7v1h-7zM8 32h2v1h-2zM11 32h2v1h-2zM14 32h1v1h-1zM16 32h4v1h-4zM21 32h1v1h-1zM23 32h1v1h-1zM28 32h1v1h-1zM30 32h1v1h-1z"/></svg></span>
+      <div class="qr-url">
+        this presentation · <a href="https://socyb.github.io/designso/invisibility2.html">socyb.github.io/designso/invisibility2.html</a><br>
+        temple-skin version · <a href="https://socyb.github.io/designso/invisibility.html">socyb.github.io/designso/invisibility.html</a><br>
+        companion talk (Monday) · <a href="https://socyb.github.io/designso/">The Ontology of Design in a Sociocybernetic Key</a><br>
+        conference site · <a href="https://socyb.github.io/oax27/">socyb.github.io/oax27</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 16 · HALL OF OBSERVATIONS ============ -->
+<section class="slide" id="s16" aria-label="Guestbook — hall of observations">
+  <div class="wrap">
+    <div class="kicker">Guestbook <span class="no">· player comments</span></div>
+    <h2>&#9733; Hall of Observations &#9733;</h2>
+    <p class="small">Every comment is an observation entering the system &mdash; and every observer gets their own sprite. Keep the seams visible: this wall is one of them.</p>
+    <p class="gb-status" id="gb-status">LOADING OBSERVATIONS <span class="blink">&#9646;</span></p>
+    <div class="gb-wall" id="gb-wall"></div>
+    <div class="gb-actions">
+      <button class="chip t gb-invite" type="button">&#9658; add your observation</button>
+      <button class="chip a" id="gb-refresh" type="button">&#8635; refresh</button>
+    </div>
+    <div class="footline">scan the QR on slide 01 to join &middot; socyb.github.io/designso/invisibility2.html</div>
+  </div>
+  <div class="frieze" aria-hidden="true"></div>
+</section>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var counter = document.getElementById('counter');
+  var progress = document.getElementById('progress');
+  var cur = 0;
+
+  slides.forEach(function(_, i){
+    var cell = document.createElement('i');
+    cell.title = 'Slide ' + (i+1);
+    cell.addEventListener('click', function(){ go(i); });
+    progress.appendChild(cell);
+  });
+  var cells = progress.children;
+
+  function pad(n){ return (n<10?'0':'')+n; }
+
+  function go(n){
+    if(n<0) n=0;
+    if(n>slides.length-1) n=slides.length-1;
+    slides[cur].classList.remove('active');
+    cur=n;
+    var s=slides[cur];
+    s.classList.add('active');
+    s.scrollTop=0;
+    Array.prototype.forEach.call(s.querySelectorAll('.reveal'), function(el){
+      el.style.animation='none'; void el.offsetWidth; el.style.animation='';
+    });
+    counter.textContent = 'LAP '+pad(cur+1)+'/'+pad(slides.length);
+    for(var i=0;i<cells.length;i++){
+      cells[i].className = i<cur?'on':(i===cur?'cur':'');
+    }
+    if(history.replaceState) history.replaceState(null,'','#'+(cur+1));
+    if(s.id==='s16') loadWall();
+  }
+
+  function next(){ go(cur+1); }
+  function prev(){ go(cur-1); }
+
+  document.querySelector('#navbtns .next').addEventListener('click', next);
+  document.querySelector('#navbtns .prev').addEventListener('click', prev);
+
+  // --- day/night theme ---
+  function setTheme(day){
+    document.body.classList.toggle('day', day);
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m) m.setAttribute('content', day?'#efe8d2':'#0c120a');
+    try{ sessionStorage.setItem('dso2-theme', day?'day':'night'); }catch(e){}
+    var ct=document.getElementById('cusdis_thread');
+    if(ct) ct.setAttribute('data-theme', day?'light':'dark');
+    if(window.CUSDIS && window.CUSDIS.setTheme){
+      try{ window.CUSDIS.setTheme(day?'light':'dark'); }catch(e){}
+    }
+  }
+  function toggleTheme(){ setTheme(!document.body.classList.contains('day')); }
+  document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+
+  // --- zoom ---
+  var zoom=1;
+  function setZoom(z){
+    zoom=Math.round(Math.max(.6,Math.min(1.7,z))*10)/10;
+    if('zoom' in document.body.style){
+      document.body.style.zoom = zoom===1 ? '' : zoom;
+      document.documentElement.style.setProperty('--slideH',(100/zoom)+'dvh');
+    }
+    try{ localStorage.setItem('dso2-zoom', zoom); }catch(e){}
+  }
+  document.getElementById('zoomIn').addEventListener('click', function(){ setZoom(zoom+.1); });
+  document.getElementById('zoomOut').addEventListener('click', function(){ setZoom(zoom-.1); });
+
+  try{
+    var zs=parseFloat(localStorage.getItem('dso2-zoom'));
+    if(!isNaN(zs) && zs!==1) setZoom(zs);
+  }catch(e){}
+
+  // --- guestbook (Cusdis) ---
+  var gb=document.getElementById('guestbook');
+  var gbBack=document.getElementById('gb-backdrop');
+  var cusdisLoaded=false;
+  function loadCusdis(){
+    var day=document.body.classList.contains('day');
+    document.getElementById('cusdis_thread').setAttribute('data-theme', day?'light':'dark');
+    if(cusdisLoaded) return;
+    cusdisLoaded=true;
+    var s=document.createElement('script');
+    s.src='https://cusdis.com/js/cusdis.es.js';
+    s.async=true; s.defer=true;
+    s.onerror=function(){
+      cusdisLoaded=false;
+      document.querySelector('.gb-off').hidden=false;
+    };
+    document.body.appendChild(s);
+  }
+  function openGB(){ gb.hidden=false; gbBack.hidden=false; loadCusdis(); }
+  function closeGB(){ gb.hidden=true; gbBack.hidden=true; }
+  function toggleGB(){ gb.hidden ? openGB() : closeGB(); }
+  document.getElementById('gbBtn').addEventListener('click', toggleGB);
+  document.getElementById('gb-close').addEventListener('click', closeGB);
+  gbBack.addEventListener('click', closeGB);
+  Array.prototype.forEach.call(document.querySelectorAll('.gb-invite'), function(el){
+    el.addEventListener('click', openGB);
+  });
+  document.getElementById('gb-wall-link').addEventListener('click', function(){
+    closeGB(); go(slides.length-1);
+  });
+  document.getElementById('gb-refresh').addEventListener('click', function(){ loadWall(); });
+
+  // --- hall of observations: custom comment wall ---
+  var ACCENTS=['t','o','a','m','l'];
+  function hashStr(s){
+    var h=2166136261;
+    for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h*16777619)>>>0; }
+    return h;
+  }
+  function avatarSVG(name){
+    var h=hashStr(name||'player');
+    var cells='';
+    for(var y=0;y<8;y++){
+      for(var x=0;x<4;x++){
+        if((h>>>(y*4+x))&1){
+          cells+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/>'
+                +'<rect x="'+(7-x)+'" y="'+y+'" width="1" height="1"/>';
+        }
+      }
+    }
+    return '<svg viewBox="0 0 8 8" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true">'+cells+'</svg>';
+  }
+  function fmtDate(iso){
+    try{
+      return new Date(iso).toLocaleString('en-GB',
+        {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+  function buildCard(c,i){
+    var name=c.by_nickname||'anonymous observer';
+    var art=document.createElement('article');
+    art.className='gb-card reveal acc-'+ACCENTS[hashStr(name)%ACCENTS.length];
+    art.style.setProperty('--i', Math.min(i,8));
+    var av=document.createElement('span');
+    av.className='gb-av'; av.innerHTML=avatarSVG(name);
+    var main=document.createElement('div'); main.className='gb-main';
+    var head=document.createElement('div'); head.className='gb-head';
+    var nm=document.createElement('span'); nm.className='gb-name'; nm.textContent=name;
+    var dt=document.createElement('span'); dt.className='gb-date'; dt.textContent=fmtDate(c.createdAt);
+    head.appendChild(nm); head.appendChild(dt);
+    if(i===0){
+      var nw=document.createElement('span');
+      nw.className='gb-new blink'; nw.textContent='★ new';
+      head.appendChild(nw);
+    }
+    var txt=document.createElement('p'); txt.className='gb-txt'; txt.textContent=c.content||'';
+    main.appendChild(head); main.appendChild(txt);
+    var reps=(c.replies&&c.replies.data)||[];
+    reps.forEach(function(r){
+      var rp=document.createElement('p'); rp.className='gb-reply';
+      var who=r.by_nickname||(r.moderator&&r.moderator.displayName)||'moderators';
+      rp.textContent='↳ '+who+': '+(r.content||'');
+      main.appendChild(rp);
+    });
+    art.appendChild(av); art.appendChild(main);
+    return art;
+  }
+  function loadWall(){
+    var wall=document.getElementById('gb-wall');
+    var status=document.getElementById('gb-status');
+    if(!window.fetch){ status.textContent='THIS BROWSER CANNOT LOAD THE WALL — PRESS C INSTEAD'; return; }
+    status.hidden=false;
+    status.innerHTML='LOADING OBSERVATIONS <span class="blink">▎</span>';
+    fetch('https://cusdis.com/api/open/comments?appId=960b7bef-d731-4569-8792-b6540f00a28b&pageId=invisibility-oaxaca-2026')
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        var arr=(j.data&&j.data.data)||[];
+        arr.sort(function(a,b){ return new Date(b.createdAt)-new Date(a.createdAt); });
+        wall.innerHTML='';
+        if(!arr.length){
+          status.textContent='NO OBSERVATIONS YET — BE THE FIRST OBSERVER';
+          return;
+        }
+        status.hidden=true;
+        arr.forEach(function(c,i){ wall.appendChild(buildCard(c,i)); });
+      })
+      .catch(function(){
+        status.textContent='NO SIGNAL — THE WALL NEEDS AN INTERNET CONNECTION';
+      });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    if(!gb.hidden){
+      if(e.key==='Escape'||e.key==='c'||e.key==='C') closeGB();
+      return;
+    }
+    switch(e.key){
+      case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'Home': e.preventDefault(); go(0); break;
+      case 'End': e.preventDefault(); go(slides.length-1); break;
+      case 'f': case 'F':
+        if(document.fullscreenElement){ document.exitFullscreen(); }
+        else if(document.documentElement.requestFullscreen){ document.documentElement.requestFullscreen(); }
+        break;
+      case 'd': case 'D': toggleTheme(); break;
+      case 'c': case 'C': openGB(); break;
+      case '+': case '=': setZoom(zoom+.1); break;
+      case '-': case '_': setZoom(zoom-.1); break;
+      case '0': setZoom(1); break;
+    }
+  });
+
+  var tx=null, ty=null;
+  document.addEventListener('touchstart', function(e){
+    tx=e.changedTouches[0].clientX; ty=e.changedTouches[0].clientY;
+  }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(tx===null) return;
+    var dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty;
+    if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)*1.5){ dx<0?next():prev(); }
+    tx=ty=null;
+  }, {passive:true});
+
+  window.addEventListener('hashchange', function(){
+    var n=parseInt(location.hash.slice(1),10);
+    if(!isNaN(n) && n-1!==cur) go(n-1);
+  });
+
+  var start=parseInt((location.hash||'#1').slice(1),10);
+  go(isNaN(start)?0:start-1);
+})();
+</script>
+</body>
+</html>
